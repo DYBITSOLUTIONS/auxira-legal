@@ -1,13 +1,394 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-      <meta charset='utf-8'>
-      <meta name='viewport' content='width=device-width'>
-      <title>Privacy Policy</title>
-      <style> body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding:1em; } </style>
-    </head>
-    <body>
-    <strong>Privacy Policy</strong><p>This privacy policy is applicable to the Auxira app (hereinafter referred to as "Application") for mobile devices, which was developed by empresa@byditsolutions.com (hereinafter referred to as "Service Provider") as a a Freemium service. This service is provided "AS IS".</p><br><strong>What information does the Application obtain and how is it used?</strong><p>The Application acquires the information you supply when you download and register the Application. Registration with the Service Provider is not mandatory. However, bear in mind that you might not be able to utilize some of the features offered by the Application unless you register with them.</p><p>The Service Provider may also use the information you provided them to contact you from time to time to provide you with important information, required notices and marketing promotions.</p><br><strong>What information does the Application collect automatically?</strong><p>In addition, the Application may collect certain information automatically, including, but not limited to, the type of mobile device you use, your mobile devices unique device ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browsers you use, and information about the way you use the Application.</p><br><strong>Does the Application collect precise real time location information of the device?</strong><!----><div><p>This Application collects your device's location, which helps the Service Provider determine your approximate geographical location and make use of in below ways:</p><ul><li>Geolocation Services: The Service Provider utilizes location data to provide features such as personalized content, relevant recommendations, and location-based services.</li><li>Analytics and Improvements: Aggregated and anonymized location data helps the Service Provider to analyze user behavior, identify trends, and improve the overall performance and functionality of the Application.</li><li>Third-Party Services: Periodically, the Service Provider may transmit anonymized location data to external services. These services assist them in enhancing the Application and optimizing their offerings.</li></ul></div><br><strong>Does the Application use Artificial Intelligence (AI) technologies?</strong><p>The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.</p><!----><br><strong>Do third parties see and/or have access to information obtained by the Application?</strong><p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.</p><div><br><p>Please note that the Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the Privacy Policy of the third-party service providers used by the Application:</p><ul><li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li><li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">AdMob</a></li><li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li><li><a href="https://expo.io/privacy" target="_blank" rel="noopener noreferrer">Expo</a></li></ul></div><p>The Service Provider may disclose User Provided and Automatically Collected Information:</p><ul><li>as required by law, such as to comply with a subpoena, or similar legal process;</li><li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li><li>with their trusted services providers who work on their behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.</li></ul><p></p><br><strong>What are my opt-out rights?</strong><p>You can halt all collection of information by the Application easily by uninstalling the Application. You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.</p><br><strong>What is the data retention policy and how can you manage your information?</strong><p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. The Service Provider will retain Automatically Collected information for up to 24 months and thereafter may store it in aggregate. If you'd like the Service Provider to delete User Provided Data that you have provided via the Application, please contact them at empresa@byditsolutions.com and we will respond in a reasonable time. Please note that some or all of the User Provided Data may be required in order for the Application to function properly.</p><br><strong>How does the Application address children's privacy?</strong><p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13.</p><div><br><p>The Application does not address anyone under the age of 13. The Service Provider does not knowingly collect personally identifiable information from children under 13 years of age. In the case the Service Provider discover that a child under 13 has provided personal information, the Service Provider will immediately delete this from their servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact the Service Provider (empresa@byditsolutions.com) so that they will be able to take the necessary actions.</p></div><br><strong>How is your information kept secure?</strong><p>The Service Provider are concerned about safeguarding the confidentiality of your information. The Service Provider provide physical, electronic, and procedural safeguards to protect information we process and maintain. For example, we limit access to this information to authorized employees and contractors who need to know that information in order to operate, develop or improve their Application. Please be aware that, although we endeavor provide reasonable security for information we process and maintain, no security system can prevent all potential security breaches.</p><br><strong>How will you be informed of changes to this Privacy Policy?</strong><p>This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.</p><br><p>This privacy policy is effective as of 2026-04-03</p><br><strong>How do you give your consent?</strong><p>By using the Application, you are giving your consent to the Service Provider processing of your information as set forth in this Privacy Policy now and as amended by us. "Processing,” means using cookies on a computer/hand held device or using or touching information in any way, including, but not limited to, collecting, storing, deleting, using, combining and disclosing information.</p><br><strong>How can you contact us?</strong><p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at empresa@byditsolutions.com.</p><hr><p>This privacy policy page was generated by <a href="https://app-privacy-policy-generator.nisrulz.com/" target="_blank" rel="noopener noreferrer">App Privacy Policy Generator</a></p>
-    </body>
-    </html>
-      
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — Auxira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #07071a;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --text: #e8e8f0;
+      --muted: #7777aa;
+      --accent-blue: #60a5fa;
+      --accent-purple: #a78bfa;
+      --accent-color: #60a5fa;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* TOP BAR */
+    .topbar {
+      width: 100%;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(7,7,26,0.85);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .topbar a:hover { color: var(--accent-blue); }
+
+    .topbar-sep { color: var(--border); font-size: 0.9rem; }
+
+    .topbar-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+    }
+
+    /* HERO */
+    .hero {
+      width: 100%;
+      padding: 64px 24px 48px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(96,165,250,0.12) 0%, transparent 65%);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(96,165,250,0.1);
+      border: 1px solid rgba(96,165,250,0.25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      color: var(--accent-blue);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #93c5fd, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .hero-date {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* CONTENT */
+    .content {
+      width: 100%;
+      max-width: 780px;
+      padding: 48px 24px 80px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .intro-box {
+      background: rgba(96,165,250,0.06);
+      border: 1px solid rgba(96,165,250,0.18);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: #b0c4de;
+    }
+
+    .intro-box strong { color: var(--accent-blue); font-weight: 600; }
+
+    .law-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(167,139,250,0.1);
+      border: 1px solid rgba(167,139,250,0.2);
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      color: var(--accent-purple);
+      font-weight: 500;
+      margin-top: 12px;
+    }
+
+    section.block { margin-bottom: 44px; }
+
+    section.block h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(96,165,250,0.15);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section.block h2 .num {
+      background: rgba(96,165,250,0.12);
+      border-radius: 8px;
+      padding: 2px 9px;
+      font-size: 0.8rem;
+      color: var(--accent-blue);
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 0.92rem;
+      line-height: 1.78;
+      color: #c8c8e0;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 10px 0 14px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    ul li {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #c0c0d8;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-blue);
+      opacity: 0.6;
+    }
+
+    ul li strong { color: #dde; font-weight: 600; }
+
+    .links-list { gap: 8px; }
+    .links-list li::before { background: var(--accent-purple); }
+    .links-list li a {
+      color: var(--accent-purple);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .links-list li a:hover { color: #c4b5fd; text-decoration: underline; }
+
+    .disclaimer-box {
+      background: rgba(167,139,250,0.07);
+      border: 1px solid rgba(167,139,250,0.22);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+    .disclaimer-box p { color: #c4b5fd; font-size: 0.88rem; margin: 0; }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .right-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 0.84rem;
+      color: #b8b8d0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .right-item .icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #44445a;
+      border-top: 1px solid var(--border);
+      width: 100%;
+    }
+    footer a { color: #6655bb; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent-purple); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.7rem; }
+      .rights-grid { grid-template-columns: 1fr; }
+      .content { padding: 36px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="topbar">
+    <a href="index.html">← Volver</a>
+    <span class="topbar-sep">·</span>
+    <span class="topbar-title">Política de Privacidad</span>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-badge">🔒 Privacidad & Datos</div>
+    <h1>Política de Privacidad</h1>
+    <p class="hero-date">Vigente desde el 3 de abril de 2026</p>
+  </div>
+
+  <div class="content">
+
+    <div class="intro-box">
+      La presente Política de Privacidad aplica a la aplicación móvil <strong>Auxira</strong>, desarrollada y operada por <strong>BYDIT SOLUTIONS</strong>, contacto: <a href="mailto:empresa@byditsolutions.com" style="color:#60a5fa;">empresa@byditsolutions.com</a>. Esta Aplicación se ofrece como servicio Freemium.<br><br>
+      El Titular actúa en cumplimiento de la <strong>Ley N° 29733</strong> — Ley de Protección de Datos Personales del Perú — y su Reglamento aprobado por Decreto Supremo N° 003-2013-JUS. Al usar la Aplicación, usted consiente el tratamiento de sus datos conforme a esta Política.
+      <div class="law-badge">⚖️ Ley N° 29733 — Perú</div>
+    </div>
+
+    <section class="block">
+      <h2><span class="num">1</span> Datos que recopilamos y cómo se usan</h2>
+      <p>La Aplicación puede recopilar los siguientes datos personales:</p>
+      <ul>
+        <li><strong>Número de teléfono:</strong> utilizado exclusivamente para autenticar su identidad. No se requiere contraseña.</li>
+        <li><strong>Ubicación del dispositivo:</strong> empleada para mostrar alertas relevantes en su zona y geolocalizar los reportes que usted publique. Solo se usa mientras la Aplicación está activa o cuando usted lo habilite expresamente.</li>
+        <li><strong>Cámara (opcional):</strong> solicitada únicamente si el usuario elige tomar una fotografía desde la Aplicación para adjuntarla a una alerta. Puede rechazar este permiso sin que ello afecte el uso general de la Aplicación.</li>
+        <li><strong>Número de DNI (opcional):</strong> para acceder a funciones con mayores privilegios, se ofrece un proceso voluntario de validación. El DNI es verificado a través de <a href="https://decolecta.com" target="_blank" rel="noopener" style="color:#60a5fa;">Decolecta</a>, proveedor intermediario autorizado que consulta RENIEC. El número de DNI no se almacena en nuestros servidores una vez completada la validación.</li>
+        <li><strong>Datos técnicos del dispositivo:</strong> modelo, sistema operativo, identificador e información de uso, recopilados automáticamente para mejorar el rendimiento de la Aplicación.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">2</span> Base legal del tratamiento</h2>
+      <ul>
+        <li>Su consentimiento expreso al aceptar esta Política al momento de registrarse o usar la Aplicación.</li>
+        <li>La ejecución del servicio que usted solicita (publicar y recibir alertas geolocalizadas).</li>
+        <li>El interés legítimo del Titular en mejorar la seguridad ciudadana y el funcionamiento de la Aplicación.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">3</span> Permisos del dispositivo</h2>
+      <ul>
+        <li><strong>Ubicación:</strong> necesaria para el funcionamiento principal. Puede desactivarla, aunque algunas funciones quedarán limitadas.</li>
+        <li><strong>Notificaciones:</strong> necesarias para recibir alertas de emergencia en su distrito. Puede desactivarlas desde la configuración de su dispositivo.</li>
+        <li><strong>Cámara:</strong> opcional. Solo se activa si el usuario elige tomar fotos desde la Aplicación.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">4</span> Compartición de datos con terceros</h2>
+      <p>Solo se comparten datos agregados y anonimizados con terceros para mejorar la Aplicación. No vendemos ni cedemos sus datos personales identificables a terceros con fines comerciales.</p>
+      <p>La Aplicación utiliza los siguientes servicios de terceros:</p>
+      <ul class="links-list">
+        <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener">Google Play Services — Política de Privacidad</a></li>
+        <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase — Política de Privacidad</a></li>
+        <li><a href="https://expo.io/privacy" target="_blank" rel="noopener">Expo — Política de Privacidad</a></li>
+        <li><a href="https://decolecta.com" target="_blank" rel="noopener">Decolecta (validación de identidad)</a></li>
+      </ul>
+      <p style="margin-top:14px;">En casos excepcionales, podremos divulgar información si así lo exige la ley peruana, una orden judicial, o para proteger derechos, seguridad o integridad de usuarios y terceros.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">5</span> Retención de datos</h2>
+      <ul>
+        <li><strong>Datos del usuario:</strong> se conservan mientras la cuenta esté activa y por un período razonable posterior.</li>
+        <li><strong>Datos automáticos:</strong> se conservan por un máximo de 24 meses, tras lo cual se almacenan de forma agregada y anonimizada.</li>
+        <li><strong>Datos de validación de DNI:</strong> no se almacenan una vez completada la verificación.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">6</span> Sus derechos (Ley N° 29733)</h2>
+      <p>Conforme a la Ley de Protección de Datos Personales del Perú, usted tiene derecho a:</p>
+      <div class="rights-grid">
+        <div class="right-item"><span class="icon">👁️</span> Acceder a sus datos personales que obran en nuestros sistemas.</div>
+        <div class="right-item"><span class="icon">✏️</span> Rectificar datos inexactos o desactualizados.</div>
+        <div class="right-item"><span class="icon">🗑️</span> Solicitar la cancelación (eliminación) de sus datos.</div>
+        <div class="right-item"><span class="icon">🚫</span> Oponerse al tratamiento de sus datos.</div>
+      </div>
+      <p style="margin-top:16px;">Para ejercer cualquiera de estos derechos, contáctenos a <a href="mailto:empresa@byditsolutions.com" style="color:#60a5fa;">empresa@byditsolutions.com</a>. También puede cesar toda recopilación de datos desinstalando la Aplicación desde su dispositivo.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">7</span> Privacidad de menores</h2>
+      <p>La Aplicación no está dirigida a personas menores de 13 años. El Titular no recopila conscientemente datos personales de menores de dicha edad. Si usted es padre, madre o tutor y tiene conocimiento de que su hijo/a ha proporcionado datos personales, contáctenos a <a href="mailto:empresa@byditsolutions.com" style="color:#60a5fa;">empresa@byditsolutions.com</a> para eliminarlos de inmediato.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">8</span> Seguridad de la información</h2>
+      <p>Implementamos medidas técnicas, administrativas y físicas razonables para proteger sus datos personales contra acceso no autorizado, pérdida, alteración o divulgación. Sin embargo, ningún sistema de seguridad es infalible.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">9</span> Fuentes de datos gubernamentales</h2>
+      <ul class="links-list">
+        <li><strong style="color:#c8c8e0;">Datos sísmicos:</strong> <a href="https://www.igp.gob.pe" target="_blank" rel="noopener">Instituto Geofísico del Perú (IGP) — igp.gob.pe</a></li>
+        <li><strong style="color:#c8c8e0;">Validación de identidad:</strong> <a href="https://www.reniec.gob.pe" target="_blank" rel="noopener">RENIEC</a> a través del proveedor intermediario <a href="https://decolecta.com" target="_blank" rel="noopener">Decolecta</a></li>
+      </ul>
+      <div class="disclaimer-box">
+        <p>⚠️ <strong style="color:#c4b5fd;">Aviso Legal:</strong> Auxira es una plataforma ciudadana independiente. No representamos ni estamos afiliados a ninguna entidad gubernamental, municipal, policial o de emergencias del Perú. La información de municipalidades y bomberos publicada en la app proviene exclusivamente de reportes ciudadanos y canales públicos oficiales.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">10</span> Cambios a esta Política</h2>
+      <p>Esta Política puede actualizarse periódicamente. Notificaremos cualquier cambio relevante actualizando esta página con la nueva versión y fecha de vigencia. El uso continuado de la Aplicación tras la publicación de cambios implica su aceptación.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">11</span> Contacto</h2>
+      <p>Para consultas, solicitudes o reclamos relacionados con esta Política:</p>
+      <ul>
+        <li>Correo electrónico: <a href="mailto:empresa@byditsolutions.com" style="color:#60a5fa;">empresa@byditsolutions.com</a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 <a href="https://github.com/BYDITSOLUTIONS" target="_blank">BYDIT Solutions</a> · Auxira · Perú
+    <br /><br />
+    <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>
+  </footer>
+
+</body>
+</html>
