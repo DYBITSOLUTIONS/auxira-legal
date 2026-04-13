@@ -1,204 +1,229 @@
- <!DOCTYPE html>
-  <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auxira — Legal</title>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auxira — Legal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        min-height: 100vh;
-        background: #0a0a1a;
-        color: #e8e8f0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+    :root {
+      --bg: #07071a;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(120,80,255,0.5);
+      --text: #e8e8f0;
+      --muted: #7777aa;
+      --accent-blue: #60a5fa;
+      --accent-purple: #a78bfa;
+      --glow: rgba(99,60,220,0.22);
+    }
 
-      .hero {
-        width: 100%;
-        padding: 80px 24px 60px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        background: radial-gradient(ellipse at 50% 0%, rgba(99, 60, 220, 0.25) 0%,     
-  transparent 70%);
-      }
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-      .logo-wrap {
-        width: 110px;
-        height: 110px;
-        border-radius: 28px;
-        overflow: hidden;
-        box-shadow: 0 0 40px rgba(99, 60, 220, 0.5), 0 8px 32px rgba(0,0,0,0.4);       
-        margin-bottom: 28px;
-        border: 2px solid rgba(120, 80, 255, 0.4);
-      }
+    /* HERO */
+    .hero {
+      width: 100%;
+      padding: 90px 24px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(99,60,220,0.28) 0%, transparent 68%);
+      position: relative;
+    }
 
-      .logo-wrap img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    .logo-wrap {
+      width: 112px;
+      height: 112px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 0 48px rgba(99,60,220,0.55), 0 8px 32px rgba(0,0,0,0.5);
+      margin-bottom: 28px;
+      border: 2px solid rgba(120,80,255,0.35);
+      animation: fadeDown 0.6s ease both;
+    }
 
-      h1 {
-        font-size: 2.4rem;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-        background: linear-gradient(135deg, #a78bfa, #60a5fa);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 12px;
-      }
+    .logo-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
-      .tagline {
-        font-size: 1rem;
-        color: #8888aa;
-        max-width: 420px;
-        line-height: 1.6;
-      }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 14px;
+      animation: fadeDown 0.6s 0.1s ease both;
+    }
 
-      .cards {
-        display: flex;
-        gap: 20px;
-        padding: 48px 24px;
-        flex-wrap: wrap;
-        justify-content: center;
-        max-width: 860px;
-        width: 100%;
-      }
+    .tagline {
+      font-size: 0.97rem;
+      color: var(--muted);
+      max-width: 400px;
+      line-height: 1.7;
+      animation: fadeDown 0.6s 0.2s ease both;
+    }
 
-      .card {
-        flex: 1;
-        min-width: 280px;
-        max-width: 380px;
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 20px;
-        padding: 36px 32px;
-        text-decoration: none;
-        color: inherit;
-        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; 
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-      }
+    /* CARDS */
+    .cards {
+      display: flex;
+      gap: 20px;
+      padding: 52px 24px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 880px;
+      width: 100%;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
 
-      .card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(120, 80, 255, 0.5);
-        box-shadow: 0 12px 40px rgba(99, 60, 220, 0.2);
-      }
+    .card {
+      flex: 1;
+      min-width: 280px;
+      max-width: 390px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 36px 32px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-      .card-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-      }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-hover);
+      box-shadow: 0 16px 48px var(--glow);
+    }
 
-      .card-icon.privacy { background: rgba(96, 165, 250, 0.15); }
-      .card-icon.terms   { background: rgba(167, 139, 250, 0.15); }
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .card-icon.privacy { background: rgba(96,165,250,0.13); }
+    .card-icon.terms   { background: rgba(167,139,250,0.13); }
 
-      .card-title {
-        font-size: 1.15rem;
-        font-weight: 600;
-        color: #f0f0ff;
-      }
+    .card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: #f0f0ff;
+    }
 
-      .card-desc {
-        font-size: 0.88rem;
-        color: #7777aa;
-        line-height: 1.6;
-      }
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
 
-      .card-link {
-        margin-top: auto;
-        font-size: 0.85rem;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
+    .card-link {
+      margin-top: auto;
+      font-size: 0.84rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card.privacy .card-link { color: var(--accent-blue); }
+    .card.terms   .card-link { color: var(--accent-purple); }
 
-      .card.privacy .card-link { color: #60a5fa; }
-      .card.terms   .card-link { color: #a78bfa; }
+    /* DIVIDER */
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--border);
+      margin: 52px auto 0;
+    }
 
-      .divider {
-        width: 60px;
-        height: 1px;
-        background: rgba(255,255,255,0.08);
-        margin: 0 auto 48px;
-      }
+    /* FOOTER */
+    footer {
+      margin-top: 48px;
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #44445a;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      width: 100%;
+    }
+    footer a { color: #6655bb; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent-purple); }
 
-      footer {
-        padding: 32px 24px;
-        text-align: center;
-        font-size: 0.8rem;
-        color: #44445a;
-        border-top: 1px solid rgba(255,255,255,0.05);
-        width: 100%;
-      }
+    /* ANIMATIONS */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-      footer a { color: #6655bb; text-decoration: none; }
-      footer a:hover { color: #a78bfa; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.9rem; }
+      .cards { padding: 36px 16px 0; }
+      .card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
 
-      @media (max-width: 600px) {
-        h1 { font-size: 1.8rem; }
-        .cards { padding: 32px 16px; }
-        .card { padding: 28px 24px; }
-      }
-    </style>
-  </head>
-  <body>
-
-    <section class="hero">
-      <div class="logo-wrap">
-        <img src="logo.jpg" alt="Auxira" />
-      </div>
-      <h1>Auxira</h1>
-      <p class="tagline">Plataforma de alertas geoespaciales y seguridad ciudadana para
-   Lima, Perú.</p>
-    </section>
-
-    <div class="cards">
-      <a href="privacy-policy" class="card privacy">
-        <div class="card-icon privacy">🔒</div>
-        <div class="card-title">Política de Privacidad</div>
-        <div class="card-desc">
-          Conoce cómo recopilamos, usamos y protegemos tu información personal,        
-  incluyendo ubicación, identidad y datos de contacto.
-        </div>
-        <div class="card-link">Leer política →</div>
-      </a>
-
-      <a href="terms" class="card terms">
-        <div class="card-icon terms">📋</div>
-        <div class="card-title">Términos y Condiciones</div>
-        <div class="card-desc">
-          Conoce las reglas de uso de Auxira, tus derechos como usuario y las
-  condiciones de los servicios que ofrecemos.
-        </div>
-        <div class="card-link">Leer términos →</div>
-      </a>
+  <section class="hero">
+    <div class="logo-wrap">
+      <img src="logo.jpg" alt="Auxira" />
     </div>
+    <h1>Auxira</h1>
+    <p class="tagline">Plataforma ciudadana de alertas de seguridad y emergencias del Perú.</p>
+  </section>
 
-    <div class="divider"></div>
+  <div class="cards">
+    <a href="privacy-policy" class="card privacy">
+      <div class="card-icon privacy">🔒</div>
+      <div class="card-title">Política de Privacidad</div>
+      <div class="card-desc">
+        Conoce cómo recopilamos, usamos y protegemos tu información personal,
+        incluyendo ubicación, identidad y datos de contacto. Cumplimos la Ley N° 29733 del Perú.
+      </div>
+      <div class="card-link">Leer política →</div>
+    </a>
 
-    <footer>
-      © 2026 <a href="https://github.com/DYBITSOLUTIONS" target="_blank">DYBIT
-  Solutions</a> · Auxira · Lima, Perú
-      <br /><br />
-      Consultas: <a
-  href="mailto:soporte@byditsolutions.com">soporte@byditsolutions.com</a>
-    </footer>
+    <a href="terms" class="card terms">
+      <div class="card-icon terms">📋</div>
+      <div class="card-title">Términos y Condiciones</div>
+      <div class="card-desc">
+        Conoce las reglas de uso de Auxira, tus derechos como usuario y las
+        condiciones de los servicios que ofrecemos.
+      </div>
+      <div class="card-link">Leer términos →</div>
+    </a>
+  </div>
 
-  </body>
-  </html>
+  <div class="divider"></div>
+
+  <footer>
+    © 2026 <a href="https://github.com/BYDITSOLUTIONS" target="_blank">BYDIT Solutions</a> · Auxira · Perú
+    <br /><br />
+    Consultas: <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>
+  </footer>
+
+</body>
+</html>
