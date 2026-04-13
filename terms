@@ -1,13 +1,342 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-      <meta charset='utf-8'>
-      <meta name='viewport' content='width=device-width'>
-      <title>Terms &amp; Conditions</title>
-      <style> body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding:1em; } </style>
-    </head>
-    <body>
-    <strong>Terms &amp; Conditions</strong><br><p>These terms and conditions apply to the Auxira app (hereby referred to as "Application") for mobile devices that was created by empresa@byditsolutions.com (hereby referred to as "Service Provider") as a Freemium service.</p><br><p>Upon downloading or utilizing the Application, you are automatically agreeing to the following terms. It is strongly advised that you thoroughly read and understand these terms prior to using the Application.</p><div><br><p>Unauthorized copying, modification of the Application, any part of the Application, or our trademarks is strictly prohibited. Any attempts to extract the source code of the Application, translate the Application into other languages, or create derivative versions are not permitted. All trademarks, copyrights, database rights, and other intellectual property rights related to the Application remain the property of the Service Provider.</p></div><br><p>The Service Provider is dedicated to ensuring that the Application is as beneficial and efficient as possible. As such, they reserve the right to modify the Application or charge for their services at any time and for any reason. The Service Provider assures you that any charges for the Application or its services will be clearly communicated to you.</p><br><p>The Application stores and processes personal data that you have provided to the Service Provider in order to provide the Service. It is your responsibility to maintain the security of your phone and access to the Application. The Service Provider strongly advise against jailbreaking or rooting your phone, which involves removing software restrictions and limitations imposed by the official operating system of your device. Such actions could expose your phone to malware, viruses, malicious programs, compromise your phone's security features, and may result in the Application not functioning correctly or at all.</p><div><p>Please note that the Application utilizes third-party services that have their own Terms and Conditions. Below are the links to the Terms and Conditions of the third-party service providers used by the Application:</p><ul><li><a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Google Play Services</a></li><li><a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener noreferrer">AdMob</a></li><li><a href="https://www.google.com/analytics/terms/" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li><li><a href="https://expo.io/terms" target="_blank" rel="noopener noreferrer">Expo</a></li></ul></div><br><p>Please be aware that the Service Provider does not assume responsibility for certain aspects. Some functions of the Application require an active internet connection, which can be Wi-Fi or provided by your mobile network provider. The Service Provider cannot be held responsible if the Application does not function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance.</p><br><p>If you are using the application outside of a Wi-Fi area, please be aware that your mobile network provider's agreement terms still apply. Consequently, you may incur charges from your mobile provider for data usage during the connection to the application, or other third-party charges. By using the application, you accept responsibility for any such charges, including roaming data charges if you use the application outside of your home territory (i.e., region or country) without disabling data roaming. If you are not the bill payer for the device on which you are using the application, they assume that you have obtained permission from the bill payer.</p><br><p>Similarly, the Service Provider cannot always assume responsibility for your usage of the application. For instance, it is your responsibility to ensure that your device remains charged. If your device runs out of battery and you are unable to access the Service, the Service Provider cannot be held responsible.</p><br><p>In terms of the Service Provider's responsibility for your use of the application, it is important to note that while they strive to ensure that it is updated and accurate at all times, they do rely on third parties to provide information to them so that they can make it available to you. The Service Provider accepts no liability for any loss, direct or indirect, that you experience as a result of relying entirely on this functionality of the application.</p><br><!----><p>The Service Provider may wish to update the application at some point. The application is currently available as per the requirements for the operating system (and for any additional systems they decide to extend the availability of the application to) may change, and you will need to download the updates if you want to continue using the application. The Service Provider does not guarantee that it will always update the application so that it is relevant to you and/or compatible with the particular operating system version installed on your device. However, you agree to always accept updates to the application when offered to you. The Service Provider may also wish to cease providing the application and may terminate its use at any time without providing termination notice to you. Unless they inform you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must cease using the application, and (if necessary) delete it from your device.</p><br><strong>Changes to These Terms and Conditions</strong><p>The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.</p><br><p>These terms and conditions are effective as of 2026-04-03</p><br><strong>Contact Us</strong><p>If you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at empresa@byditsolutions.com.</p><hr><p>This Terms and Conditions page was generated by <a href="https://app-privacy-policy-generator.nisrulz.com/" target="_blank" rel="noopener noreferrer">App Privacy Policy Generator</a></p>
-    </body>
-    </html>
-      
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos y Condiciones — Auxira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #07071a;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --text: #e8e8f0;
+      --muted: #7777aa;
+      --accent-blue: #60a5fa;
+      --accent-purple: #a78bfa;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* TOP BAR */
+    .topbar {
+      width: 100%;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(7,7,26,0.85);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .topbar a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .topbar a:hover { color: var(--accent-purple); }
+    .topbar-sep { color: var(--border); font-size: 0.9rem; }
+    .topbar-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent-purple);
+    }
+
+    /* HERO */
+    .hero {
+      width: 100%;
+      padding: 64px 24px 48px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(167,139,250,0.12) 0%, transparent 65%);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(167,139,250,0.1);
+      border: 1px solid rgba(167,139,250,0.25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      color: var(--accent-purple);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    .hero-date { font-size: 0.82rem; color: var(--muted); }
+
+    /* CONTENT */
+    .content {
+      width: 100%;
+      max-width: 780px;
+      padding: 48px 24px 80px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .intro-box {
+      background: rgba(167,139,250,0.06);
+      border: 1px solid rgba(167,139,250,0.18);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: #c4b5fd;
+    }
+    .intro-box strong { color: var(--accent-purple); font-weight: 600; }
+
+    section.block { margin-bottom: 44px; }
+
+    section.block h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-purple);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(167,139,250,0.15);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    section.block h2 .num {
+      background: rgba(167,139,250,0.12);
+      border-radius: 8px;
+      padding: 2px 9px;
+      font-size: 0.8rem;
+      color: var(--accent-purple);
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 0.92rem;
+      line-height: 1.78;
+      color: #c8c8e0;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 10px 0 14px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    ul li {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #c0c0d8;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-purple);
+      opacity: 0.6;
+    }
+    ul li strong { color: #dde; font-weight: 600; }
+
+    .links-list li::before { background: var(--accent-blue); }
+    .links-list li a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .links-list li a:hover { color: #93c5fd; text-decoration: underline; }
+
+    .disclaimer-box {
+      background: rgba(167,139,250,0.07);
+      border: 1px solid rgba(167,139,250,0.22);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+    .disclaimer-box p { color: #c4b5fd; font-size: 0.88rem; margin: 0; }
+
+    .warning-box {
+      background: rgba(251,191,36,0.06);
+      border: 1px solid rgba(251,191,36,0.2);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-top: 16px;
+    }
+    .warning-box p { color: #fde68a; font-size: 0.87rem; margin: 0; line-height: 1.65; }
+
+    footer {
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #44445a;
+      border-top: 1px solid var(--border);
+      width: 100%;
+    }
+    footer a { color: #6655bb; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent-purple); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.7rem; }
+      .content { padding: 36px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="topbar">
+    <a href="index.html">← Volver</a>
+    <span class="topbar-sep">·</span>
+    <span class="topbar-title">Términos y Condiciones</span>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-badge">📋 Términos de Uso</div>
+    <h1>Términos y Condiciones</h1>
+    <p class="hero-date">Vigente desde el 3 de abril de 2026</p>
+  </div>
+
+  <div class="content">
+
+    <div class="intro-box">
+      Los presentes Términos y Condiciones regulan el acceso y uso de la aplicación móvil <strong>Auxira</strong>, desarrollada y operada por <strong>BYDIT SOLUTIONS</strong>, contacto: <a href="mailto:empresa@byditsolutions.com" style="color:#a78bfa;">empresa@byditsolutions.com</a>.<br><br>
+      Al descargar, instalar o utilizar la Aplicación, usted declara haber leído, comprendido y aceptado estos Términos en su totalidad. Si no está de acuerdo, le pedimos que no utilice la Aplicación.
+    </div>
+
+    <section class="block">
+      <h2><span class="num">1</span> Descripción del servicio</h2>
+      <p>Auxira es una plataforma ciudadana independiente para la publicación, consulta y gestión de alertas de seguridad y emergencias en el Perú.</p>
+      <div class="disclaimer-box">
+        <p>⚠️ <strong>Aviso Legal:</strong> No somos una entidad gubernamental ni representamos a ningún organismo público, municipal, policial o de emergencias. La información publicada en la Aplicación proviene de reportes ciudadanos y fuentes públicas oficiales.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">2</span> Registro y cuenta de usuario</h2>
+      <p>El registro en la Aplicación se realiza mediante número de teléfono, sin necesidad de contraseña. Algunas funciones adicionales requieren la validación voluntaria de identidad mediante DNI, procesada por <a href="https://decolecta.com" target="_blank" rel="noopener" style="color:#a78bfa;">Decolecta</a>, proveedor autorizado con base en datos de RENIEC.</p>
+      <p>Usted es responsable de mantener la confidencialidad del acceso a su cuenta y de toda actividad realizada desde ella.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">3</span> Uso aceptable</h2>
+      <p>Al utilizar la Aplicación, usted se compromete a:</p>
+      <ul>
+        <li>Publicar únicamente alertas verídicas y de buena fe.</li>
+        <li>No publicar contenido falso, engañoso, ofensivo, discriminatorio o que incite a la violencia.</li>
+        <li>No suplantar la identidad de otras personas, entidades o autoridades.</li>
+        <li>No utilizar la Aplicación para actividades ilícitas según la legislación peruana vigente.</li>
+        <li>No intentar acceder de forma no autorizada a los sistemas, servidores o cuentas de otros usuarios.</li>
+      </ul>
+      <p style="margin-top:12px;">El Titular se reserva el derecho de suspender o eliminar cuentas que incumplan estas condiciones, sin perjuicio de las acciones legales que pudieran corresponder.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">4</span> Contenido del usuario</h2>
+      <p>Usted conserva la titularidad del contenido que publique (fotos, texto, alertas). Al publicarlo, otorga al Titular una licencia no exclusiva, gratuita y mundial para mostrar, distribuir y utilizar dicho contenido dentro de la Aplicación con el fin de prestar el servicio.</p>
+      <p>El Titular no se responsabiliza por la veracidad, exactitud o legalidad del contenido publicado por los usuarios.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">5</span> Propiedad intelectual</h2>
+      <p>Todos los derechos de propiedad intelectual sobre la Aplicación, su diseño, código fuente, marcas, logotipos y demás elementos pertenecen al Titular o a sus licenciantes. Queda prohibida la copia, reproducción, modificación, distribución o uso comercial no autorizado de cualquier elemento de la Aplicación.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">6</span> Disponibilidad del servicio y modificaciones</h2>
+      <p>El Titular se reserva el derecho de modificar, suspender o discontinuar la Aplicación o cualquiera de sus funciones, en cualquier momento y por cualquier razón, con o sin previo aviso. No garantizamos disponibilidad ininterrumpida del servicio.</p>
+      <p>El Titular podrá actualizar la Aplicación en cualquier momento. Para continuar usándola, es posible que deba aceptar dichas actualizaciones.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">7</span> Servicios de terceros</h2>
+      <p>La Aplicación integra servicios de terceros sujetos a sus propios Términos y Condiciones:</p>
+      <ul class="links-list">
+        <li><a href="https://policies.google.com/terms" target="_blank" rel="noopener">Google Play Services — Términos</a></li>
+        <li><a href="https://www.google.com/analytics/terms/" target="_blank" rel="noopener">Google Analytics for Firebase — Términos</a></li>
+        <li><a href="https://expo.io/terms" target="_blank" rel="noopener">Expo — Términos</a></li>
+        <li><a href="https://decolecta.com" target="_blank" rel="noopener">Decolecta (validación de identidad)</a></li>
+      </ul>
+      <p style="margin-top:12px;">El uso de estos servicios implica la aceptación de sus respectivos términos.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">8</span> Limitación de responsabilidad</h2>
+      <p>La Aplicación se proporciona "tal cual" y "según disponibilidad". El Titular no garantiza que la Aplicación esté libre de errores, interrupciones o que la información mostrada sea siempre exacta o completa.</p>
+      <p>El Titular no asume responsabilidad por:</p>
+      <ul>
+        <li>Daños directos o indirectos derivados del uso o imposibilidad de uso de la Aplicación.</li>
+        <li>La veracidad de las alertas publicadas por otros usuarios.</li>
+        <li>Pérdidas ocasionadas por decisiones tomadas con base en la información de la Aplicación.</li>
+        <li>Fallas en la conectividad a internet o en los dispositivos del usuario.</li>
+      </ul>
+      <div class="warning-box">
+        <p>⚡ Recuerde que algunas funciones requieren conexión a internet activa. Los cargos de datos de su operador móvil son responsabilidad del usuario.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">9</span> Ley aplicable y jurisdicción</h2>
+      <p>Los presentes Términos se rigen por las leyes de la República del Perú. Cualquier controversia derivada de su interpretación o cumplimiento se someterá a los tribunales competentes de la ciudad de Lima, Perú, salvo disposición legal imperativa en contrario.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">10</span> Cambios a estos Términos</h2>
+      <p>El Titular podrá actualizar estos Términos en cualquier momento. Los cambios se comunicarán actualizando esta página con la nueva fecha de vigencia. El uso continuado de la Aplicación tras la publicación de los cambios implica la aceptación de los nuevos Términos.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="num">11</span> Contacto</h2>
+      <p>Para cualquier consulta relacionada con estos Términos:</p>
+      <ul>
+        <li>Correo electrónico: <a href="mailto:empresa@byditsolutions.com" style="color:#a78bfa;">empresa@byditsolutions.com</a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 <a href="https://github.com/BYDITSOLUTIONS" target="_blank">BYDIT Solutions</a> · Auxira · Perú
+    <br /><br />
+    <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>
+  </footer>
+
+</body>
+</html>
