@@ -5,337 +5,462 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Términos y Condiciones — Auxira</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #07071a;
-      --surface: rgba(255,255,255,0.04);
-      --border: rgba(255,255,255,0.08);
-      --text: #e8e8f0;
-      --muted: #7777aa;
-      --accent-blue: #60a5fa;
-      --accent-purple: #a78bfa;
+      --bg: #060614;
+      --surface: rgba(255,255,255,0.035);
+      --surface2: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.07);
+      --text: #eeeef8;
+      --text2: #a0a0c0;
+      --text3: #606080;
+      --indigo: #6366f1;
+      --indigo-light: #818cf8;
+      --cyan: #22d3ee;
+      --cyan-soft: rgba(34,211,238,0.1);
+      --indigo-soft: rgba(99,102,241,0.1);
+      --purple: #a78bfa;
+      --purple-soft: rgba(167,139,250,0.1);
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(6,6,20,0.75);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text3);
+      text-decoration: none;
+      transition: color 0.2s;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+    }
+    .nav-back:hover { color: var(--indigo-light); border-color: rgba(99,102,241,0.2); background: var(--indigo-soft); }
+
+    .nav-sep { width: 1px; height: 20px; background: var(--border); }
+
+    .nav-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text2);
+    }
+
+    .nav-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--indigo-light);
+      background: var(--indigo-soft);
+      border: 1px solid rgba(99,102,241,0.25);
+      border-radius: 100px;
+      padding: 3px 10px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 24px 72px;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* TOP BAR */
-    .topbar {
-      width: 100%;
-      padding: 18px 32px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      border-bottom: 1px solid var(--border);
-      background: rgba(7,7,26,0.85);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .topbar a {
-      font-size: 0.82rem;
-      color: var(--muted);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
-    }
-    .topbar a:hover { color: var(--accent-purple); }
-    .topbar-sep { color: var(--border); font-size: 0.9rem; }
-    .topbar-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--accent-purple);
+    .hero-glow {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(99,102,241,0.15) 0%, rgba(167,139,250,0.05) 50%, transparent 70%);
+      pointer-events: none;
     }
 
-    /* HERO */
-    .hero {
-      width: 100%;
-      padding: 64px 24px 48px;
-      text-align: center;
-      background: radial-gradient(ellipse at 50% 0%, rgba(167,139,250,0.12) 0%, transparent 65%);
-    }
-    .hero-badge {
-      display: inline-flex;
+    .hero-icon {
+      width: 72px; height: 72px;
+      border-radius: 20px;
+      background: var(--indigo-soft);
+      border: 1px solid rgba(99,102,241,0.25);
+      display: flex;
       align-items: center;
-      gap: 7px;
-      background: rgba(167,139,250,0.1);
-      border: 1px solid rgba(167,139,250,0.25);
-      border-radius: 100px;
-      padding: 6px 16px;
-      font-size: 0.78rem;
-      color: var(--accent-purple);
-      margin-bottom: 20px;
-      font-weight: 500;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 0 30px rgba(99,102,241,0.2);
+      animation: floatIn 0.7s cubic-bezier(.22,.68,0,1.2) both;
     }
+
     .hero h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, var(--indigo-light) 0%, var(--purple) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: 12px;
+      animation: fadeUp 0.6s 0.15s ease both;
     }
-    .hero-date { font-size: 0.82rem; color: var(--muted); }
 
-    /* CONTENT */
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.25s ease both;
+    }
+
+    .hero-date { font-size: 0.8rem; color: var(--text3); display: flex; align-items: center; gap: 6px; }
+
+    .law-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--indigo-soft);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--indigo-light);
+    }
+
+    /* ── CONTENT ── */
     .content {
-      width: 100%;
-      max-width: 780px;
-      padding: 48px 24px 80px;
-      animation: fadeUp 0.5s ease both;
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+      animation: fadeUp 0.5s 0.3s ease both;
     }
 
     .intro-box {
-      background: rgba(167,139,250,0.06);
-      border: 1px solid rgba(167,139,250,0.18);
-      border-radius: 16px;
-      padding: 24px 28px;
-      margin-bottom: 48px;
-      font-size: 0.92rem;
-      line-height: 1.75;
-      color: #c4b5fd;
+      background: linear-gradient(135deg, rgba(99,102,241,0.06), rgba(167,139,250,0.04));
+      border: 1px solid rgba(99,102,241,0.18);
+      border-radius: 18px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+      font-size: 0.93rem;
+      line-height: 1.8;
+      color: var(--text2);
+      font-weight: 300;
     }
-    .intro-box strong { color: var(--accent-purple); font-weight: 600; }
+    .intro-box strong { color: var(--indigo-light); font-weight: 600; }
+    .intro-box a { color: var(--indigo-light); text-decoration: none; }
+    .intro-box a:hover { text-decoration: underline; }
 
-    section.block { margin-bottom: 44px; }
+    .block { margin-bottom: 48px; }
 
-    section.block h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--accent-purple);
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(167,139,250,0.15);
+    .block h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      letter-spacing: -0.3px;
     }
-    section.block h2 .num {
-      background: rgba(167,139,250,0.12);
-      border-radius: 8px;
-      padding: 2px 9px;
-      font-size: 0.8rem;
-      color: var(--accent-purple);
+
+    .num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
       font-weight: 700;
+      color: var(--indigo-light);
+      background: var(--indigo-soft);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 6px;
+      padding: 2px 8px;
     }
 
     p {
       font-size: 0.92rem;
-      line-height: 1.78;
-      color: #c8c8e0;
-      margin-bottom: 12px;
+      line-height: 1.8;
+      color: var(--text2);
+      margin-bottom: 14px;
+      font-weight: 300;
     }
 
-    ul {
-      list-style: none;
-      margin: 10px 0 14px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    ul li {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: #c0c0d8;
-      padding-left: 20px;
-      position: relative;
-    }
-    ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 9px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent-purple);
-      opacity: 0.6;
-    }
-    ul li strong { color: #dde; font-weight: 600; }
+    .items { display: flex; flex-direction: column; gap: 10px; margin: 14px 0; }
 
-    .links-list li::before { background: var(--accent-blue); }
-    .links-list li a {
-      color: var(--accent-blue);
-      text-decoration: none;
+    .item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
       font-size: 0.88rem;
-      transition: color 0.2s;
+      color: var(--text2);
+      line-height: 1.65;
+      font-weight: 300;
+      transition: border-color 0.2s;
     }
-    .links-list li a:hover { color: #93c5fd; text-decoration: underline; }
+    .item:hover { border-color: rgba(99,102,241,0.25); }
+    .item strong { color: var(--text); font-weight: 600; }
 
-    .disclaimer-box {
+    .links { display: flex; flex-direction: column; gap: 8px; margin: 14px 0; }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      color: var(--indigo-light);
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .link-item:hover { border-color: rgba(99,102,241,0.4); background: var(--indigo-soft); color: #c7d2fe; }
+    .link-item::before { content: '↗'; font-size: 0.75rem; opacity: 0.5; }
+
+    .box-alert {
       background: rgba(167,139,250,0.07);
-      border: 1px solid rgba(167,139,250,0.22);
+      border: 1px solid rgba(167,139,250,0.2);
       border-radius: 14px;
-      padding: 20px 24px;
+      padding: 20px 22px;
       margin-top: 16px;
+      font-size: 0.87rem;
+      color: var(--purple);
+      line-height: 1.7;
+      font-weight: 300;
     }
-    .disclaimer-box p { color: #c4b5fd; font-size: 0.88rem; margin: 0; }
+    .box-alert strong { font-weight: 600; }
 
-    .warning-box {
-      background: rgba(251,191,36,0.06);
-      border: 1px solid rgba(251,191,36,0.2);
+    .box-info {
+      background: rgba(34,211,238,0.05);
+      border: 1px solid rgba(34,211,238,0.15);
       border-radius: 14px;
       padding: 18px 22px;
       margin-top: 16px;
+      font-size: 0.87rem;
+      color: var(--cyan);
+      line-height: 1.7;
+      font-weight: 300;
     }
-    .warning-box p { color: #fde68a; font-size: 0.87rem; margin: 0; line-height: 1.65; }
 
     footer {
-      padding: 28px 24px;
+      position: relative;
+      z-index: 1;
+      padding: 32px 24px;
       text-align: center;
-      font-size: 0.78rem;
-      color: #44445a;
       border-top: 1px solid var(--border);
-      width: 100%;
     }
-    footer a { color: #6655bb; text-decoration: none; transition: color 0.2s; }
-    footer a:hover { color: var(--accent-purple); }
 
+    .footer-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      color: var(--text3);
+      margin-bottom: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-size: 0.78rem;
+    }
+    .footer-links a { color: var(--text3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--indigo-light); }
+    .footer-links span { color: var(--border); }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: scale(0.8) translateY(16px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
+      from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
-      .hero h1 { font-size: 1.7rem; }
-      .content { padding: 36px 16px 60px; }
+      nav { padding: 0 16px; }
+      .hero { padding: 100px 20px 56px; }
+      .hero h1 { font-size: 1.9rem; }
+      .intro-box { padding: 20px 20px; }
+      .content { padding: 0 16px 80px; }
     }
   </style>
 </head>
 <body>
 
-  <nav class="topbar">
-    <a href="index.html">← Volver</a>
-    <span class="topbar-sep">·</span>
-    <span class="topbar-title">Términos y Condiciones</span>
+  <nav>
+    <div class="nav-left">
+      <a class="nav-back" href="index.html">← Inicio</a>
+      <div class="nav-sep"></div>
+      <span class="nav-title">Términos y Condiciones</span>
+    </div>
+    <span class="nav-badge">📋 Términos</span>
   </nav>
 
   <div class="hero">
-    <div class="hero-badge">📋 Términos de Uso</div>
+    <div class="hero-glow"></div>
+    <div class="hero-icon">📋</div>
     <h1>Términos y Condiciones</h1>
-    <p class="hero-date">Vigente desde el 3 de abril de 2026</p>
+    <div class="hero-meta">
+      <span class="hero-date">📅 Vigente desde el 3 de abril de 2026</span>
+      <span class="law-pill">⚖️ Ley peruana aplicable</span>
+    </div>
   </div>
 
   <div class="content">
 
     <div class="intro-box">
-      Los presentes Términos y Condiciones regulan el acceso y uso de la aplicación móvil <strong>Auxira</strong>, desarrollada y operada por <strong>BYDIT SOLUTIONS</strong>, contacto: <a href="mailto:empresa@byditsolutions.com" style="color:#a78bfa;">empresa@byditsolutions.com</a>.<br><br>
-      Al descargar, instalar o utilizar la Aplicación, usted declara haber leído, comprendido y aceptado estos Términos en su totalidad. Si no está de acuerdo, le pedimos que no utilice la Aplicación.
+      Los presentes Términos regulan el acceso y uso de la aplicación móvil <strong>Auxira</strong>, desarrollada y operada por <strong>BYDIT SOLUTIONS</strong> — <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>.<br><br>
+      Al descargar, instalar o utilizar Auxira, declaras haber leído, comprendido y aceptado estos Términos en su totalidad. Si no estás de acuerdo, te pedimos que no uses la Aplicación.
     </div>
 
-    <section class="block">
-      <h2><span class="num">1</span> Descripción del servicio</h2>
+    <div class="block">
+      <h2><span class="num">01</span> Descripción del servicio</h2>
       <p>Auxira es una plataforma ciudadana independiente para la publicación, consulta y gestión de alertas de seguridad y emergencias en el Perú.</p>
-      <div class="disclaimer-box">
-        <p>⚠️ <strong>Aviso Legal:</strong> No somos una entidad gubernamental ni representamos a ningún organismo público, municipal, policial o de emergencias. La información publicada en la Aplicación proviene de reportes ciudadanos y fuentes públicas oficiales.</p>
+      <div class="box-alert">
+        <strong>⚠️ Aviso Legal:</strong> No somos una entidad gubernamental ni representamos a ningún organismo público, municipal, policial o de emergencias. La información en la app proviene de reportes ciudadanos y fuentes públicas oficiales.
       </div>
-    </section>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">2</span> Registro y cuenta de usuario</h2>
-      <p>El registro en la Aplicación se realiza mediante número de teléfono, sin necesidad de contraseña. Algunas funciones adicionales requieren la validación voluntaria de identidad mediante DNI, procesada por <a href="https://decolecta.com" target="_blank" rel="noopener" style="color:#a78bfa;">Decolecta</a>, proveedor autorizado con base en datos de RENIEC.</p>
-      <p>Usted es responsable de mantener la confidencialidad del acceso a su cuenta y de toda actividad realizada desde ella.</p>
-    </section>
+    <div class="block">
+      <h2><span class="num">02</span> Registro y cuenta de usuario</h2>
+      <p>El registro se realiza mediante número de teléfono, sin contraseña. Algunas funciones adicionales requieren la validación voluntaria de identidad mediante DNI, procesada por <a href="https://decolecta.com" target="_blank" rel="noopener" style="color:var(--indigo-light);">Decolecta</a>, proveedor autorizado con base en datos de RENIEC.</p>
+      <p>Eres responsable de mantener la confidencialidad del acceso a tu cuenta y de toda actividad realizada desde ella.</p>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">3</span> Uso aceptable</h2>
-      <p>Al utilizar la Aplicación, usted se compromete a:</p>
-      <ul>
-        <li>Publicar únicamente alertas verídicas y de buena fe.</li>
-        <li>No publicar contenido falso, engañoso, ofensivo, discriminatorio o que incite a la violencia.</li>
-        <li>No suplantar la identidad de otras personas, entidades o autoridades.</li>
-        <li>No utilizar la Aplicación para actividades ilícitas según la legislación peruana vigente.</li>
-        <li>No intentar acceder de forma no autorizada a los sistemas, servidores o cuentas de otros usuarios.</li>
-      </ul>
-      <p style="margin-top:12px;">El Titular se reserva el derecho de suspender o eliminar cuentas que incumplan estas condiciones, sin perjuicio de las acciones legales que pudieran corresponder.</p>
-    </section>
+    <div class="block">
+      <h2><span class="num">03</span> Uso aceptable</h2>
+      <p>Al usar Auxira te comprometes a:</p>
+      <div class="items">
+        <div class="item">✅ Publicar únicamente alertas verídicas y de buena fe.</div>
+        <div class="item">🚫 No publicar contenido falso, engañoso, ofensivo, discriminatorio o que incite a la violencia.</div>
+        <div class="item">🚫 No suplantar la identidad de otras personas, entidades o autoridades.</div>
+        <div class="item">🚫 No usar la app para actividades ilícitas según la legislación peruana vigente.</div>
+        <div class="item">🚫 No intentar acceder de forma no autorizada a los sistemas, servidores o cuentas de otros usuarios.</div>
+      </div>
+      <p style="margin-top:14px;">El Titular se reserva el derecho de suspender o eliminar cuentas que incumplan estas condiciones, sin perjuicio de las acciones legales correspondientes.</p>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">4</span> Contenido del usuario</h2>
-      <p>Usted conserva la titularidad del contenido que publique (fotos, texto, alertas). Al publicarlo, otorga al Titular una licencia no exclusiva, gratuita y mundial para mostrar, distribuir y utilizar dicho contenido dentro de la Aplicación con el fin de prestar el servicio.</p>
+    <div class="block">
+      <h2><span class="num">04</span> Contenido del usuario</h2>
+      <p>Conservas la titularidad del contenido que publiques (fotos, texto, alertas). Al publicarlo, otorgas al Titular una licencia no exclusiva, gratuita y mundial para mostrarlo y distribuirlo dentro de Auxira con el fin de prestar el servicio.</p>
       <p>El Titular no se responsabiliza por la veracidad, exactitud o legalidad del contenido publicado por los usuarios.</p>
-    </section>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">5</span> Propiedad intelectual</h2>
-      <p>Todos los derechos de propiedad intelectual sobre la Aplicación, su diseño, código fuente, marcas, logotipos y demás elementos pertenecen al Titular o a sus licenciantes. Queda prohibida la copia, reproducción, modificación, distribución o uso comercial no autorizado de cualquier elemento de la Aplicación.</p>
-    </section>
+    <div class="block">
+      <h2><span class="num">05</span> Propiedad intelectual</h2>
+      <p>Todos los derechos de propiedad intelectual sobre Auxira — diseño, código fuente, marcas, logotipos y demás elementos — pertenecen al Titular o a sus licenciantes. Queda prohibida la copia, reproducción, modificación, distribución o uso comercial no autorizado de cualquier elemento de la app.</p>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">6</span> Disponibilidad del servicio y modificaciones</h2>
-      <p>El Titular se reserva el derecho de modificar, suspender o discontinuar la Aplicación o cualquiera de sus funciones, en cualquier momento y por cualquier razón, con o sin previo aviso. No garantizamos disponibilidad ininterrumpida del servicio.</p>
-      <p>El Titular podrá actualizar la Aplicación en cualquier momento. Para continuar usándola, es posible que deba aceptar dichas actualizaciones.</p>
-    </section>
+    <div class="block">
+      <h2><span class="num">06</span> Disponibilidad y modificaciones</h2>
+      <p>El Titular se reserva el derecho de modificar, suspender o discontinuar la app o cualquiera de sus funciones en cualquier momento, con o sin previo aviso. No garantizamos disponibilidad ininterrumpida del servicio.</p>
+      <p>El Titular podrá actualizar la app en cualquier momento. Para continuar usándola, es posible que debas aceptar dichas actualizaciones.</p>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">7</span> Servicios de terceros</h2>
-      <p>La Aplicación integra servicios de terceros sujetos a sus propios Términos y Condiciones:</p>
-      <ul class="links-list">
-        <li><a href="https://policies.google.com/terms" target="_blank" rel="noopener">Google Play Services — Términos</a></li>
-        <li><a href="https://www.google.com/analytics/terms/" target="_blank" rel="noopener">Google Analytics for Firebase — Términos</a></li>
-        <li><a href="https://expo.io/terms" target="_blank" rel="noopener">Expo — Términos</a></li>
-        <li><a href="https://decolecta.com" target="_blank" rel="noopener">Decolecta (validación de identidad)</a></li>
-      </ul>
-      <p style="margin-top:12px;">El uso de estos servicios implica la aceptación de sus respectivos términos.</p>
-    </section>
-
-    <section class="block">
-      <h2><span class="num">8</span> Limitación de responsabilidad</h2>
-      <p>La Aplicación se proporciona "tal cual" y "según disponibilidad". El Titular no garantiza que la Aplicación esté libre de errores, interrupciones o que la información mostrada sea siempre exacta o completa.</p>
-      <p>El Titular no asume responsabilidad por:</p>
-      <ul>
-        <li>Daños directos o indirectos derivados del uso o imposibilidad de uso de la Aplicación.</li>
-        <li>La veracidad de las alertas publicadas por otros usuarios.</li>
-        <li>Pérdidas ocasionadas por decisiones tomadas con base en la información de la Aplicación.</li>
-        <li>Fallas en la conectividad a internet o en los dispositivos del usuario.</li>
-      </ul>
-      <div class="warning-box">
-        <p>⚡ Recuerde que algunas funciones requieren conexión a internet activa. Los cargos de datos de su operador móvil son responsabilidad del usuario.</p>
+    <div class="block">
+      <h2><span class="num">07</span> Servicios de terceros</h2>
+      <p>Auxira integra servicios de terceros sujetos a sus propios términos:</p>
+      <div class="links">
+        <a class="link-item" href="https://policies.google.com/terms" target="_blank" rel="noopener">Google Play Services — Términos y Condiciones</a>
+        <a class="link-item" href="https://www.google.com/analytics/terms/" target="_blank" rel="noopener">Google Analytics for Firebase — Términos</a>
+        <a class="link-item" href="https://expo.io/terms" target="_blank" rel="noopener">Expo — Términos y Condiciones</a>
+        <a class="link-item" href="https://decolecta.com" target="_blank" rel="noopener">Decolecta — Validación de identidad</a>
       </div>
-    </section>
+      <p style="margin-top:14px;">El uso de estos servicios implica la aceptación de sus respectivos términos.</p>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">9</span> Ley aplicable y jurisdicción</h2>
-      <p>Los presentes Términos se rigen por las leyes de la República del Perú. Cualquier controversia derivada de su interpretación o cumplimiento se someterá a los tribunales competentes de la ciudad de Lima, Perú, salvo disposición legal imperativa en contrario.</p>
-    </section>
+    <div class="block">
+      <h2><span class="num">08</span> Limitación de responsabilidad</h2>
+      <p>Auxira se proporciona "tal cual" y "según disponibilidad". El Titular no garantiza que la app esté libre de errores o que la información mostrada sea siempre exacta.</p>
+      <div class="items">
+        <div class="item">No asumimos responsabilidad por daños directos o indirectos derivados del uso o imposibilidad de uso de la app.</div>
+        <div class="item">No garantizamos la veracidad de las alertas publicadas por otros usuarios.</div>
+        <div class="item">No asumimos responsabilidad por pérdidas ocasionadas por decisiones tomadas con base en la información de la app.</div>
+        <div class="item">No asumimos responsabilidad por fallas en la conectividad a internet o en los dispositivos del usuario.</div>
+      </div>
+      <div class="box-info">
+        ⚡ Algunas funciones requieren conexión a internet activa. Los cargos de datos de tu operador móvil son responsabilidad del usuario.
+      </div>
+    </div>
 
-    <section class="block">
+    <div class="block">
+      <h2><span class="num">09</span> Ley aplicable y jurisdicción</h2>
+      <p>Estos Términos se rigen por las leyes de la República del Perú. Cualquier controversia se someterá a los tribunales competentes de Lima, Perú, salvo disposición legal imperativa en contrario.</p>
+    </div>
+
+    <div class="block">
       <h2><span class="num">10</span> Cambios a estos Términos</h2>
-      <p>El Titular podrá actualizar estos Términos en cualquier momento. Los cambios se comunicarán actualizando esta página con la nueva fecha de vigencia. El uso continuado de la Aplicación tras la publicación de los cambios implica la aceptación de los nuevos Términos.</p>
-    </section>
+      <p>El Titular podrá actualizar estos Términos en cualquier momento. Los cambios se comunicarán actualizando esta página con la nueva fecha de vigencia. El uso continuado de la app implica la aceptación de los nuevos Términos.</p>
+    </div>
 
-    <section class="block">
+    <div class="block">
       <h2><span class="num">11</span> Contacto</h2>
-      <p>Para cualquier consulta relacionada con estos Términos:</p>
-      <ul>
-        <li>Correo electrónico: <a href="mailto:empresa@byditsolutions.com" style="color:#a78bfa;">empresa@byditsolutions.com</a></li>
-      </ul>
-    </section>
+      <p>Para consultas sobre estos Términos:</p>
+      <div class="items">
+        <div class="item">📧 <a href="mailto:empresa@byditsolutions.com" style="color:var(--indigo-light);">empresa@byditsolutions.com</a></div>
+      </div>
+    </div>
 
   </div>
 
   <footer>
-    © 2026 <a href="https://github.com/BYDITSOLUTIONS" target="_blank">BYDIT Solutions</a> · Auxira · Perú
-    <br /><br />
-    <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>
+    <p class="footer-brand">© 2026 BYDIT Solutions · Auxira · Perú</p>
+    <div class="footer-links">
+      <a href="index.html">Inicio</a>
+      <span>·</span>
+      <a href="privacy-policy.html">Privacidad</a>
+      <span>·</span>
+      <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>
+    </div>
   </footer>
 
 </body>
