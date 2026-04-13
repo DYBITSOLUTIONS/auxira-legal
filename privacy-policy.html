@@ -5,389 +5,545 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Política de Privacidad — Auxira</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #07071a;
-      --surface: rgba(255,255,255,0.04);
-      --border: rgba(255,255,255,0.08);
-      --text: #e8e8f0;
-      --muted: #7777aa;
-      --accent-blue: #60a5fa;
-      --accent-purple: #a78bfa;
-      --accent-color: #60a5fa;
+      --bg: #060614;
+      --surface: rgba(255,255,255,0.035);
+      --surface2: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.07);
+      --text: #eeeef8;
+      --text2: #a0a0c0;
+      --text3: #606080;
+      --indigo: #6366f1;
+      --indigo-light: #818cf8;
+      --cyan: #22d3ee;
+      --cyan-soft: rgba(34,211,238,0.1);
+      --indigo-soft: rgba(99,102,241,0.1);
+      --purple: #a78bfa;
+      --purple-soft: rgba(167,139,250,0.1);
+      --glow: rgba(34,211,238,0.15);
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(6,6,20,0.75);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text3);
+      text-decoration: none;
+      transition: color 0.2s;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+    }
+    .nav-back:hover { color: var(--cyan); border-color: rgba(34,211,238,0.2); background: var(--cyan-soft); }
+
+    .nav-sep { width: 1px; height: 20px; background: var(--border); }
+
+    .nav-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text2);
+    }
+
+    .nav-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--cyan);
+      background: var(--cyan-soft);
+      border: 1px solid rgba(34,211,238,0.2);
+      border-radius: 100px;
+      padding: 3px 10px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 24px 72px;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* TOP BAR */
-    .topbar {
-      width: 100%;
-      padding: 18px 32px;
+    .hero-glow {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(34,211,238,0.12) 0%, rgba(99,102,241,0.06) 50%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-icon {
+      width: 72px; height: 72px;
+      border-radius: 20px;
+      background: var(--cyan-soft);
+      border: 1px solid rgba(34,211,238,0.25);
       display: flex;
       align-items: center;
-      gap: 14px;
-      border-bottom: 1px solid var(--border);
-      background: rgba(7,7,26,0.85);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .topbar a {
-      font-size: 0.82rem;
-      color: var(--muted);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
-    }
-    .topbar a:hover { color: var(--accent-blue); }
-
-    .topbar-sep { color: var(--border); font-size: 0.9rem; }
-
-    .topbar-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--accent-blue);
-    }
-
-    /* HERO */
-    .hero {
-      width: 100%;
-      padding: 64px 24px 48px;
-      text-align: center;
-      background: radial-gradient(ellipse at 50% 0%, rgba(96,165,250,0.12) 0%, transparent 65%);
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(96,165,250,0.1);
-      border: 1px solid rgba(96,165,250,0.25);
-      border-radius: 100px;
-      padding: 6px 16px;
-      font-size: 0.78rem;
-      color: var(--accent-blue);
-      margin-bottom: 20px;
-      font-weight: 500;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 0 30px rgba(34,211,238,0.15);
+      animation: floatIn 0.7s cubic-bezier(.22,.68,0,1.2) both;
     }
 
     .hero h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #93c5fd, #60a5fa);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #93c5fd 0%, var(--cyan) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: 12px;
+      animation: fadeUp 0.6s 0.15s ease both;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.25s ease both;
     }
 
     .hero-date {
-      font-size: 0.82rem;
-      color: var(--muted);
+      font-size: 0.8rem;
+      color: var(--text3);
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* CONTENT */
-    .content {
-      width: 100%;
-      max-width: 780px;
-      padding: 48px 24px 80px;
-      animation: fadeUp 0.5s ease both;
-    }
-
-    .intro-box {
-      background: rgba(96,165,250,0.06);
-      border: 1px solid rgba(96,165,250,0.18);
-      border-radius: 16px;
-      padding: 24px 28px;
-      margin-bottom: 48px;
-      font-size: 0.92rem;
-      line-height: 1.75;
-      color: #b0c4de;
-    }
-
-    .intro-box strong { color: var(--accent-blue); font-weight: 600; }
-
-    .law-badge {
+    .law-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(167,139,250,0.1);
+      background: var(--purple-soft);
       border: 1px solid rgba(167,139,250,0.2);
-      border-radius: 8px;
+      border-radius: 100px;
       padding: 4px 12px;
-      font-size: 0.75rem;
-      color: var(--accent-purple);
-      font-weight: 500;
-      margin-top: 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--purple);
+      letter-spacing: 0.3px;
     }
 
-    section.block { margin-bottom: 44px; }
+    /* ── CONTENT ── */
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
 
-    section.block h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--accent-blue);
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(96,165,250,0.15);
+    /* Intro box */
+    .intro-box {
+      background: linear-gradient(135deg, rgba(34,211,238,0.05), rgba(99,102,241,0.05));
+      border: 1px solid rgba(34,211,238,0.15);
+      border-radius: 18px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+      font-size: 0.93rem;
+      line-height: 1.8;
+      color: var(--text2);
+    }
+    .intro-box strong { color: var(--cyan); font-weight: 600; }
+    .intro-box a { color: var(--cyan); text-decoration: none; }
+    .intro-box a:hover { text-decoration: underline; }
+
+    /* Sections */
+    .block { margin-bottom: 48px; }
+
+    .block h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      letter-spacing: -0.3px;
     }
 
-    section.block h2 .num {
-      background: rgba(96,165,250,0.12);
-      border-radius: 8px;
-      padding: 2px 9px;
-      font-size: 0.8rem;
-      color: var(--accent-blue);
+    .num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
       font-weight: 700;
+      color: var(--cyan);
+      background: var(--cyan-soft);
+      border: 1px solid rgba(34,211,238,0.2);
+      border-radius: 6px;
+      padding: 2px 8px;
+      letter-spacing: 0.3px;
     }
 
     p {
       font-size: 0.92rem;
-      line-height: 1.78;
-      color: #c8c8e0;
-      margin-bottom: 12px;
+      line-height: 1.8;
+      color: var(--text2);
+      margin-bottom: 14px;
+      font-weight: 300;
     }
 
-    ul {
-      list-style: none;
-      margin: 10px 0 14px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    /* Items list */
+    .items { display: flex; flex-direction: column; gap: 10px; margin: 14px 0; }
 
-    ul li {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: #c0c0d8;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 9px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent-blue);
-      opacity: 0.6;
-    }
-
-    ul li strong { color: #dde; font-weight: 600; }
-
-    .links-list { gap: 8px; }
-    .links-list li::before { background: var(--accent-purple); }
-    .links-list li a {
-      color: var(--accent-purple);
-      text-decoration: none;
+    .item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
       font-size: 0.88rem;
-      transition: color 0.2s;
+      color: var(--text2);
+      line-height: 1.65;
+      font-weight: 300;
+      transition: border-color 0.2s;
     }
-    .links-list li a:hover { color: #c4b5fd; text-decoration: underline; }
+    .item:hover { border-color: rgba(34,211,238,0.2); }
+    .item strong { color: var(--text); font-weight: 600; }
 
-    .disclaimer-box {
-      background: rgba(167,139,250,0.07);
-      border: 1px solid rgba(167,139,250,0.22);
-      border-radius: 14px;
-      padding: 20px 24px;
-      margin-top: 16px;
+    /* Links list */
+    .links { display: flex; flex-direction: column; gap: 8px; margin: 14px 0; }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      color: var(--indigo-light);
+      font-weight: 500;
+      transition: all 0.2s;
     }
-    .disclaimer-box p { color: #c4b5fd; font-size: 0.88rem; margin: 0; }
+    .link-item:hover { border-color: rgba(99,102,241,0.4); background: var(--indigo-soft); color: #c7d2fe; }
+    .link-item::before { content: '↗'; font-size: 0.75rem; opacity: 0.6; }
 
+    /* Rights grid */
     .rights-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
-      margin-top: 10px;
+      margin: 16px 0;
     }
-    .right-item {
+
+    .right-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 16px;
-      font-size: 0.84rem;
-      color: #b8b8d0;
+      border-radius: 14px;
+      padding: 18px 16px;
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
       gap: 8px;
+      transition: border-color 0.2s;
     }
-    .right-item .icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+    .right-card:hover { border-color: rgba(34,211,238,0.2); }
 
-    /* FOOTER */
-    footer {
-      padding: 28px 24px;
-      text-align: center;
+    .right-icon { font-size: 1.3rem; }
+
+    .right-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .right-desc {
       font-size: 0.78rem;
-      color: #44445a;
-      border-top: 1px solid var(--border);
-      width: 100%;
+      color: var(--text3);
+      line-height: 1.5;
+      font-weight: 300;
     }
-    footer a { color: #6655bb; text-decoration: none; transition: color 0.2s; }
-    footer a:hover { color: var(--accent-purple); }
 
+    /* Alert boxes */
+    .box-warning {
+      background: rgba(167,139,250,0.07);
+      border: 1px solid rgba(167,139,250,0.2);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-top: 16px;
+      font-size: 0.87rem;
+      color: var(--purple);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .box-warning strong { font-weight: 600; }
+
+    .box-gov {
+      background: rgba(99,102,241,0.06);
+      border: 1px solid rgba(99,102,241,0.18);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-top: 16px;
+      font-size: 0.87rem;
+      color: var(--indigo-light);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .box-gov strong { font-weight: 600; color: var(--text2); }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 32px 24px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      color: var(--text3);
+      margin-bottom: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-size: 0.78rem;
+    }
+    .footer-links a { color: var(--text3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--cyan); }
+    .footer-links span { color: var(--border); }
+
+    /* Animations */
+    @keyframes floatIn {
+      from { opacity: 0; transform: scale(0.8) translateY(16px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
+      from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
-      .hero h1 { font-size: 1.7rem; }
+      nav { padding: 0 16px; }
+      .hero { padding: 100px 20px 56px; }
+      .hero h1 { font-size: 1.9rem; }
+      .intro-box { padding: 20px 20px; }
       .rights-grid { grid-template-columns: 1fr; }
-      .content { padding: 36px 16px 60px; }
+      .content { padding: 0 16px 80px; }
     }
   </style>
 </head>
 <body>
 
-  <nav class="topbar">
-    <a href="index.html">← Volver</a>
-    <span class="topbar-sep">·</span>
-    <span class="topbar-title">Política de Privacidad</span>
+  <nav>
+    <div class="nav-left">
+      <a class="nav-back" href="index.html">← Inicio</a>
+      <div class="nav-sep"></div>
+      <span class="nav-title">Política de Privacidad</span>
+    </div>
+    <span class="nav-badge">🔒 Privacidad</span>
   </nav>
 
   <div class="hero">
-    <div class="hero-badge">🔒 Privacidad & Datos</div>
+    <div class="hero-glow"></div>
+    <div class="hero-icon">🔒</div>
     <h1>Política de Privacidad</h1>
-    <p class="hero-date">Vigente desde el 3 de abril de 2026</p>
+    <div class="hero-meta">
+      <span class="hero-date">📅 Vigente desde el 3 de abril de 2026</span>
+      <span class="law-pill">⚖️ Ley N° 29733 — Perú</span>
+    </div>
   </div>
 
   <div class="content">
 
     <div class="intro-box">
-      La presente Política de Privacidad aplica a la aplicación móvil <strong>Auxira</strong>, desarrollada y operada por <strong>BYDIT SOLUTIONS</strong>, contacto: <a href="mailto:empresa@byditsolutions.com" style="color:#60a5fa;">empresa@byditsolutions.com</a>. Esta Aplicación se ofrece como servicio Freemium.<br><br>
-      El Titular actúa en cumplimiento de la <strong>Ley N° 29733</strong> — Ley de Protección de Datos Personales del Perú — y su Reglamento aprobado por Decreto Supremo N° 003-2013-JUS. Al usar la Aplicación, usted consiente el tratamiento de sus datos conforme a esta Política.
-      <div class="law-badge">⚖️ Ley N° 29733 — Perú</div>
+      La presente Política aplica a la aplicación móvil <strong>Auxira</strong>, desarrollada y operada por <strong>BYDIT SOLUTIONS</strong> — <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>. Servicio ofrecido como Freemium.<br><br>
+      Actuamos en cumplimiento de la <strong>Ley N° 29733 — Ley de Protección de Datos Personales del Perú</strong> y su Reglamento (D.S. N° 003-2013-JUS). Al usar Auxira, consientes el tratamiento de tus datos conforme a esta Política.
     </div>
 
-    <section class="block">
-      <h2><span class="num">1</span> Datos que recopilamos y cómo se usan</h2>
-      <p>La Aplicación puede recopilar los siguientes datos personales:</p>
-      <ul>
-        <li><strong>Número de teléfono:</strong> utilizado exclusivamente para autenticar su identidad. No se requiere contraseña.</li>
-        <li><strong>Ubicación del dispositivo:</strong> empleada para mostrar alertas relevantes en su zona y geolocalizar los reportes que usted publique. Solo se usa mientras la Aplicación está activa o cuando usted lo habilite expresamente.</li>
-        <li><strong>Cámara (opcional):</strong> solicitada únicamente si el usuario elige tomar una fotografía desde la Aplicación para adjuntarla a una alerta. Puede rechazar este permiso sin que ello afecte el uso general de la Aplicación.</li>
-        <li><strong>Número de DNI (opcional):</strong> para acceder a funciones con mayores privilegios, se ofrece un proceso voluntario de validación. El DNI es verificado a través de <a href="https://decolecta.com" target="_blank" rel="noopener" style="color:#60a5fa;">Decolecta</a>, proveedor intermediario autorizado que consulta RENIEC. El número de DNI no se almacena en nuestros servidores una vez completada la validación.</li>
-        <li><strong>Datos técnicos del dispositivo:</strong> modelo, sistema operativo, identificador e información de uso, recopilados automáticamente para mejorar el rendimiento de la Aplicación.</li>
-      </ul>
-    </section>
+    <div class="block">
+      <h2><span class="num">01</span> Datos que recopilamos</h2>
+      <p>Auxira recopila únicamente los datos necesarios para funcionar:</p>
+      <div class="items">
+        <div class="item"><strong>📱 Número de teléfono</strong> — Usado exclusivamente para autenticar tu identidad. Sin contraseñas.</div>
+        <div class="item"><strong>📍 Ubicación del dispositivo</strong> — Para mostrar alertas relevantes en tu zona y geolocalizar tus reportes. Solo activa mientras usas la app o cuando lo habilitas expresamente.</div>
+        <div class="item"><strong>📷 Cámara (opcional)</strong> — Solo si eliges tomar una foto desde la app para adjuntarla a una alerta. Puedes rechazarla sin afectar el uso general.</div>
+        <div class="item"><strong>🪪 Número de DNI (opcional)</strong> — Para acceder a funciones con mayores privilegios, puedes validar tu identidad voluntariamente. El DNI se verifica a través de <a href="https://decolecta.com" target="_blank" rel="noopener" style="color:var(--cyan);">Decolecta</a>, proveedor autorizado que consulta RENIEC. <strong>No almacenamos tu DNI una vez completada la validación.</strong></div>
+        <div class="item"><strong>⚙️ Datos técnicos del dispositivo</strong> — Modelo, sistema operativo e información de uso. Recopilados automáticamente para mejorar el rendimiento.</div>
+      </div>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">2</span> Base legal del tratamiento</h2>
-      <ul>
-        <li>Su consentimiento expreso al aceptar esta Política al momento de registrarse o usar la Aplicación.</li>
-        <li>La ejecución del servicio que usted solicita (publicar y recibir alertas geolocalizadas).</li>
-        <li>El interés legítimo del Titular en mejorar la seguridad ciudadana y el funcionamiento de la Aplicación.</li>
-      </ul>
-    </section>
+    <div class="block">
+      <h2><span class="num">02</span> Base legal del tratamiento</h2>
+      <div class="items">
+        <div class="item">Tu consentimiento expreso al aceptar esta Política al registrarte o usar la app.</div>
+        <div class="item">La ejecución del servicio que solicitas: publicar y recibir alertas geolocalizadas.</div>
+        <div class="item">El interés legítimo del Titular en mejorar la seguridad ciudadana y el funcionamiento de la app.</div>
+      </div>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">3</span> Permisos del dispositivo</h2>
-      <ul>
-        <li><strong>Ubicación:</strong> necesaria para el funcionamiento principal. Puede desactivarla, aunque algunas funciones quedarán limitadas.</li>
-        <li><strong>Notificaciones:</strong> necesarias para recibir alertas de emergencia en su distrito. Puede desactivarlas desde la configuración de su dispositivo.</li>
-        <li><strong>Cámara:</strong> opcional. Solo se activa si el usuario elige tomar fotos desde la Aplicación.</li>
-      </ul>
-    </section>
+    <div class="block">
+      <h2><span class="num">03</span> Permisos del dispositivo</h2>
+      <div class="items">
+        <div class="item"><strong>Ubicación</strong> — Necesaria para el funcionamiento principal. Puedes desactivarla, aunque algunas funciones quedarán limitadas.</div>
+        <div class="item"><strong>Notificaciones</strong> — Para recibir alertas de emergencia en tu distrito. Puedes desactivarlas desde la configuración de tu dispositivo.</div>
+        <div class="item"><strong>Cámara</strong> — Opcional. Solo se activa si eliges tomar fotos desde la app.</div>
+      </div>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">4</span> Compartición de datos con terceros</h2>
-      <p>Solo se comparten datos agregados y anonimizados con terceros para mejorar la Aplicación. No vendemos ni cedemos sus datos personales identificables a terceros con fines comerciales.</p>
-      <p>La Aplicación utiliza los siguientes servicios de terceros:</p>
-      <ul class="links-list">
-        <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener">Google Play Services — Política de Privacidad</a></li>
-        <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase — Política de Privacidad</a></li>
-        <li><a href="https://expo.io/privacy" target="_blank" rel="noopener">Expo — Política de Privacidad</a></li>
-        <li><a href="https://decolecta.com" target="_blank" rel="noopener">Decolecta (validación de identidad)</a></li>
-      </ul>
-      <p style="margin-top:14px;">En casos excepcionales, podremos divulgar información si así lo exige la ley peruana, una orden judicial, o para proteger derechos, seguridad o integridad de usuarios y terceros.</p>
-    </section>
+    <div class="block">
+      <h2><span class="num">04</span> Compartición de datos con terceros</h2>
+      <p>Solo se comparten datos agregados y anonimizados. No vendemos ni cedemos tus datos personales identificables a terceros con fines comerciales.</p>
+      <p>Servicios de terceros integrados en Auxira:</p>
+      <div class="links">
+        <a class="link-item" href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener">Google Play Services — Política de Privacidad</a>
+        <a class="link-item" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase — Política de Privacidad</a>
+        <a class="link-item" href="https://expo.io/privacy" target="_blank" rel="noopener">Expo — Política de Privacidad</a>
+        <a class="link-item" href="https://decolecta.com" target="_blank" rel="noopener">Decolecta — Validación de identidad</a>
+      </div>
+      <p style="margin-top:14px;">En casos excepcionales podremos divulgar información si lo exige la ley peruana, una orden judicial, o para proteger derechos, seguridad o integridad de usuarios y terceros.</p>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">5</span> Retención de datos</h2>
-      <ul>
-        <li><strong>Datos del usuario:</strong> se conservan mientras la cuenta esté activa y por un período razonable posterior.</li>
-        <li><strong>Datos automáticos:</strong> se conservan por un máximo de 24 meses, tras lo cual se almacenan de forma agregada y anonimizada.</li>
-        <li><strong>Datos de validación de DNI:</strong> no se almacenan una vez completada la verificación.</li>
-      </ul>
-    </section>
+    <div class="block">
+      <h2><span class="num">05</span> Retención de datos</h2>
+      <div class="items">
+        <div class="item"><strong>Datos del usuario</strong> — Conservados mientras la cuenta esté activa y por un período razonable posterior.</div>
+        <div class="item"><strong>Datos automáticos</strong> — Máximo 24 meses, tras lo cual se almacenan de forma agregada y anonimizada.</div>
+        <div class="item"><strong>DNI</strong> — No se almacena una vez completada la verificación.</div>
+      </div>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">6</span> Sus derechos (Ley N° 29733)</h2>
-      <p>Conforme a la Ley de Protección de Datos Personales del Perú, usted tiene derecho a:</p>
+    <div class="block">
+      <h2><span class="num">06</span> Tus derechos — Ley N° 29733</h2>
       <div class="rights-grid">
-        <div class="right-item"><span class="icon">👁️</span> Acceder a sus datos personales que obran en nuestros sistemas.</div>
-        <div class="right-item"><span class="icon">✏️</span> Rectificar datos inexactos o desactualizados.</div>
-        <div class="right-item"><span class="icon">🗑️</span> Solicitar la cancelación (eliminación) de sus datos.</div>
-        <div class="right-item"><span class="icon">🚫</span> Oponerse al tratamiento de sus datos.</div>
+        <div class="right-card">
+          <span class="right-icon">👁️</span>
+          <span class="right-label">Acceso</span>
+          <span class="right-desc">Conocer qué datos personales tuyos obran en nuestros sistemas.</span>
+        </div>
+        <div class="right-card">
+          <span class="right-icon">✏️</span>
+          <span class="right-label">Rectificación</span>
+          <span class="right-desc">Corregir datos inexactos o desactualizados.</span>
+        </div>
+        <div class="right-card">
+          <span class="right-icon">🗑️</span>
+          <span class="right-label">Cancelación</span>
+          <span class="right-desc">Solicitar la eliminación de tus datos personales.</span>
+        </div>
+        <div class="right-card">
+          <span class="right-icon">🚫</span>
+          <span class="right-label">Oposición</span>
+          <span class="right-desc">Oponerte al tratamiento de tus datos en cualquier momento.</span>
+        </div>
       </div>
-      <p style="margin-top:16px;">Para ejercer cualquiera de estos derechos, contáctenos a <a href="mailto:empresa@byditsolutions.com" style="color:#60a5fa;">empresa@byditsolutions.com</a>. También puede cesar toda recopilación de datos desinstalando la Aplicación desde su dispositivo.</p>
-    </section>
+      <p style="margin-top:18px;">Para ejercer cualquiera de estos derechos escríbenos a <a href="mailto:empresa@byditsolutions.com" style="color:var(--cyan);">empresa@byditsolutions.com</a>. También puedes cesar toda recopilación desinstalando la app.</p>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">7</span> Privacidad de menores</h2>
-      <p>La Aplicación no está dirigida a personas menores de 13 años. El Titular no recopila conscientemente datos personales de menores de dicha edad. Si usted es padre, madre o tutor y tiene conocimiento de que su hijo/a ha proporcionado datos personales, contáctenos a <a href="mailto:empresa@byditsolutions.com" style="color:#60a5fa;">empresa@byditsolutions.com</a> para eliminarlos de inmediato.</p>
-    </section>
+    <div class="block">
+      <h2><span class="num">07</span> Privacidad de menores</h2>
+      <p>Auxira no está dirigida a personas menores de 13 años y no recopilamos conscientemente sus datos. Si eres padre, madre o tutor y sabes que tu hijo/a nos proporcionó información personal, contáctanos a <a href="mailto:empresa@byditsolutions.com" style="color:var(--cyan);">empresa@byditsolutions.com</a> para eliminarla de inmediato.</p>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">8</span> Seguridad de la información</h2>
-      <p>Implementamos medidas técnicas, administrativas y físicas razonables para proteger sus datos personales contra acceso no autorizado, pérdida, alteración o divulgación. Sin embargo, ningún sistema de seguridad es infalible.</p>
-    </section>
+    <div class="block">
+      <h2><span class="num">08</span> Seguridad de la información</h2>
+      <p>Implementamos medidas técnicas, administrativas y físicas razonables para proteger tus datos contra acceso no autorizado, pérdida, alteración o divulgación. Sin embargo, ningún sistema de seguridad es infalible.</p>
+    </div>
 
-    <section class="block">
-      <h2><span class="num">9</span> Fuentes de datos gubernamentales</h2>
-      <ul class="links-list">
-        <li><strong style="color:#c8c8e0;">Datos sísmicos:</strong> <a href="https://www.igp.gob.pe" target="_blank" rel="noopener">Instituto Geofísico del Perú (IGP) — igp.gob.pe</a></li>
-        <li><strong style="color:#c8c8e0;">Validación de identidad:</strong> <a href="https://www.reniec.gob.pe" target="_blank" rel="noopener">RENIEC</a> a través del proveedor intermediario <a href="https://decolecta.com" target="_blank" rel="noopener">Decolecta</a></li>
-      </ul>
-      <div class="disclaimer-box">
-        <p>⚠️ <strong style="color:#c4b5fd;">Aviso Legal:</strong> Auxira es una plataforma ciudadana independiente. No representamos ni estamos afiliados a ninguna entidad gubernamental, municipal, policial o de emergencias del Perú. La información de municipalidades y bomberos publicada en la app proviene exclusivamente de reportes ciudadanos y canales públicos oficiales.</p>
+    <div class="block">
+      <h2><span class="num">09</span> Fuentes de datos gubernamentales</h2>
+      <div class="links">
+        <a class="link-item" href="https://www.igp.gob.pe" target="_blank" rel="noopener">Instituto Geofísico del Perú (IGP) — Datos sísmicos</a>
+        <a class="link-item" href="https://www.reniec.gob.pe" target="_blank" rel="noopener">RENIEC — Validación de identidad vía Decolecta</a>
       </div>
-    </section>
+      <div class="box-warning">
+        <strong>⚠️ Aviso Legal:</strong> Auxira es una plataforma ciudadana independiente. No representamos ni estamos afiliados a ninguna entidad gubernamental, municipal, policial o de emergencias del Perú. La información de municipalidades y bomberos proviene exclusivamente de reportes ciudadanos y canales públicos oficiales.
+      </div>
+    </div>
 
-    <section class="block">
+    <div class="block">
       <h2><span class="num">10</span> Cambios a esta Política</h2>
-      <p>Esta Política puede actualizarse periódicamente. Notificaremos cualquier cambio relevante actualizando esta página con la nueva versión y fecha de vigencia. El uso continuado de la Aplicación tras la publicación de cambios implica su aceptación.</p>
-    </section>
+      <p>Esta Política puede actualizarse periódicamente. Notificaremos cambios relevantes actualizando esta página con la nueva fecha de vigencia. El uso continuado de la app implica la aceptación de los cambios.</p>
+    </div>
 
-    <section class="block">
+    <div class="block">
       <h2><span class="num">11</span> Contacto</h2>
-      <p>Para consultas, solicitudes o reclamos relacionados con esta Política:</p>
-      <ul>
-        <li>Correo electrónico: <a href="mailto:empresa@byditsolutions.com" style="color:#60a5fa;">empresa@byditsolutions.com</a></li>
-      </ul>
-    </section>
+      <p>Para consultas, solicitudes o reclamos sobre esta Política:</p>
+      <div class="items">
+        <div class="item">📧 <a href="mailto:empresa@byditsolutions.com" style="color:var(--cyan);">empresa@byditsolutions.com</a></div>
+      </div>
+    </div>
 
   </div>
 
   <footer>
-    © 2026 <a href="https://github.com/BYDITSOLUTIONS" target="_blank">BYDIT Solutions</a> · Auxira · Perú
-    <br /><br />
-    <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>
+    <p class="footer-brand">© 2026 BYDIT Solutions · Auxira · Perú</p>
+    <div class="footer-links">
+      <a href="index.html">Inicio</a>
+      <span>·</span>
+      <a href="terms.html">Términos</a>
+      <span>·</span>
+      <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>
+    </div>
   </footer>
 
 </body>
