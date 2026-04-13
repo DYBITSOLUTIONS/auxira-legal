@@ -3,226 +3,548 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Auxira — Legal</title>
+  <title>Auxira — Plataforma Ciudadana</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #07071a;
-      --surface: rgba(255,255,255,0.04);
-      --border: rgba(255,255,255,0.08);
-      --border-hover: rgba(120,80,255,0.5);
-      --text: #e8e8f0;
-      --muted: #7777aa;
-      --accent-blue: #60a5fa;
-      --accent-purple: #a78bfa;
-      --glow: rgba(99,60,220,0.22);
+      --bg: #060614;
+      --bg2: #0c0c22;
+      --surface: rgba(255,255,255,0.035);
+      --surface2: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.07);
+      --border-hover: rgba(99,102,241,0.6);
+      --text: #eeeef8;
+      --text2: #a0a0c0;
+      --text3: #606080;
+      --indigo: #6366f1;
+      --indigo-light: #818cf8;
+      --cyan: #22d3ee;
+      --cyan-soft: rgba(34,211,238,0.12);
+      --indigo-soft: rgba(99,102,241,0.12);
+      --glow-indigo: rgba(99,102,241,0.2);
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      min-height: 100vh;
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    /* HERO */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(6,6,20,0.7);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      width: 32px; height: 32px;
+      border-radius: 9px;
+      overflow: hidden;
+      border: 1px solid rgba(99,102,241,0.3);
+    }
+    .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .nav-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+
+    .nav-pill {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--cyan);
+      background: var(--cyan-soft);
+      border: 1px solid rgba(34,211,238,0.2);
+      border-radius: 100px;
+      padding: 3px 10px;
+      letter-spacing: 0.3px;
+    }
+
     .hero {
-      width: 100%;
-      padding: 90px 24px 64px;
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      padding: 100px 24px 60px;
       text-align: center;
-      background: radial-gradient(ellipse at 50% 0%, rgba(99,60,220,0.28) 0%, transparent 68%);
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 10%; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 500px;
+      background: radial-gradient(ellipse, rgba(99,102,241,0.18) 0%, rgba(34,211,238,0.06) 45%, transparent 70%);
+      pointer-events: none;
+      filter: blur(1px);
+    }
+
+    .logo-ring {
       position: relative;
+      margin-bottom: 36px;
+      animation: floatIn 0.8s cubic-bezier(.22,.68,0,1.2) both;
+    }
+
+    .logo-ring::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 36px;
+      background: conic-gradient(from 0deg, var(--indigo), var(--cyan), var(--indigo));
+      opacity: 0.4;
+      animation: spin 6s linear infinite;
+      filter: blur(4px);
     }
 
     .logo-wrap {
-      width: 112px;
-      height: 112px;
-      border-radius: 28px;
+      position: relative;
+      width: 100px; height: 100px;
+      border-radius: 26px;
       overflow: hidden;
-      box-shadow: 0 0 48px rgba(99,60,220,0.55), 0 8px 32px rgba(0,0,0,0.5);
-      margin-bottom: 28px;
-      border: 2px solid rgba(120,80,255,0.35);
-      animation: fadeDown 0.6s ease both;
+      border: 2px solid rgba(99,102,241,0.4);
+      box-shadow: 0 0 40px rgba(99,102,241,0.3), 0 8px 32px rgba(0,0,0,0.5);
     }
-
     .logo-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text2);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      animation: pulse 2s infinite;
+    }
+
     h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: 2.6rem;
-      font-weight: 800;
-      letter-spacing: -1px;
-      background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--text);
+      margin-bottom: 8px;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, var(--indigo-light) 0%, var(--cyan) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 14px;
-      animation: fadeDown 0.6s 0.1s ease both;
     }
 
-    .tagline {
-      font-size: 0.97rem;
-      color: var(--muted);
-      max-width: 400px;
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text2);
+      max-width: 480px;
       line-height: 1.7;
-      animation: fadeDown 0.6s 0.2s ease both;
+      font-weight: 300;
+      margin: 16px auto 0;
+      animation: fadeUp 0.6s 0.3s ease both;
     }
 
-    /* CARDS */
-    .cards {
+    .stats {
       display: flex;
-      gap: 20px;
-      padding: 52px 24px 0;
+      gap: 32px;
+      margin-top: 52px;
       flex-wrap: wrap;
       justify-content: center;
-      max-width: 880px;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .stat-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--indigo-light), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-weight: 500;
+    }
+
+    .stat-sep {
+      width: 1px; height: 36px;
+      background: var(--border);
+      align-self: center;
+    }
+
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 0 24px 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--indigo-light);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 860px;
       width: 100%;
-      animation: fadeUp 0.7s 0.3s ease both;
     }
 
     .card {
-      flex: 1;
-      min-width: 280px;
-      max-width: 390px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 22px;
+      border-radius: 20px;
       padding: 36px 32px;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--border-hover);
-      box-shadow: 0 16px 48px var(--glow);
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 20px;
+    }
+
+    .card.privacy::before { background: radial-gradient(ellipse at 0% 0%, rgba(34,211,238,0.08), transparent 60%); }
+    .card.terms::before   { background: radial-gradient(ellipse at 0% 0%, rgba(99,102,241,0.1), transparent 60%); }
+
+    .card:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: 0 20px 60px var(--glow-indigo); }
+    .card:hover::before { opacity: 1; }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .card-icon {
-      width: 50px;
-      height: 50px;
+      width: 48px; height: 48px;
       border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+      font-size: 20px;
     }
-    .card-icon.privacy { background: rgba(96,165,250,0.13); }
-    .card-icon.terms   { background: rgba(167,139,250,0.13); }
+    .card.privacy .card-icon { background: var(--cyan-soft); border: 1px solid rgba(34,211,238,0.2); }
+    .card.terms   .card-icon { background: var(--indigo-soft); border: 1px solid rgba(99,102,241,0.2); }
+
+    .card-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+    .card.privacy .card-tag { color: var(--cyan); background: var(--cyan-soft); }
+    .card.terms   .card-tag { color: var(--indigo-light); background: var(--indigo-soft); }
 
     .card-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.12rem;
-      font-weight: 700;
-      color: #f0f0ff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.3px;
     }
 
     .card-desc {
       font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.65;
+      color: var(--text2);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .card-link {
-      margin-top: auto;
       font-size: 0.84rem;
-      font-weight: 500;
+      font-weight: 600;
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .card.privacy .card-link { color: var(--accent-blue); }
-    .card.terms   .card-link { color: var(--accent-purple); }
+    .card.privacy .card-link { color: var(--cyan); }
+    .card.terms   .card-link { color: var(--indigo-light); }
 
-    /* DIVIDER */
-    .divider {
-      width: 60px;
-      height: 1px;
-      background: var(--border);
-      margin: 52px auto 0;
-    }
+    .card-date { font-size: 0.72rem; color: var(--text3); }
 
-    /* FOOTER */
-    footer {
-      margin-top: 48px;
-      padding: 28px 24px;
-      text-align: center;
-      font-size: 0.78rem;
-      color: #44445a;
-      border-top: 1px solid rgba(255,255,255,0.05);
+    .disclaimer {
+      max-width: 860px;
       width: 100%;
+      margin-top: 24px;
+      background: rgba(99,102,241,0.05);
+      border: 1px solid rgba(99,102,241,0.15);
+      border-radius: 16px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
     }
-    footer a { color: #6655bb; text-decoration: none; transition: color 0.2s; }
-    footer a:hover { color: var(--accent-purple); }
 
-    /* ANIMATIONS */
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-14px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .disclaimer-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+
+    .disclaimer-text {
+      font-size: 0.82rem;
+      color: var(--text3);
+      line-height: 1.7;
+    }
+    .disclaimer-text strong { color: var(--text2); font-weight: 500; }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 32px 24px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text3);
+      margin-bottom: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-size: 0.78rem;
+      color: var(--text3);
+    }
+    .footer-links a { color: var(--text3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--indigo-light); }
+    .footer-links span { color: var(--border); }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: scale(0.85) translateY(20px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
     }
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
+      from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 1.9rem; }
-      .cards { padding: 36px 16px 0; }
+      nav { padding: 0 20px; }
+      h1 { letter-spacing: -1px; }
+      .stats { gap: 20px; }
+      .stat-sep { display: none; }
+      .cards { grid-template-columns: 1fr; }
       .card { padding: 28px 22px; }
+      .disclaimer { padding: 16px 18px; flex-direction: column; gap: 8px; }
     }
   </style>
 </head>
 <body>
 
+  <nav>
+    <a class="nav-brand" href="#">
+      <div class="nav-logo"><img src="logo.jpg" alt="Auxira" /></div>
+      <span class="nav-name">Auxira</span>
+    </a>
+    <span class="nav-pill">Plataforma Ciudadana</span>
+  </nav>
+
   <section class="hero">
-    <div class="logo-wrap">
-      <img src="logo.jpg" alt="Auxira" />
+    <div class="hero-glow"></div>
+
+    <div class="logo-ring">
+      <div class="logo-wrap">
+        <img src="logo.jpg" alt="Auxira" />
+      </div>
     </div>
-    <h1>Auxira</h1>
-    <p class="tagline">Plataforma ciudadana de alertas de seguridad y emergencias del Perú.</p>
+
+    <div class="hero-eyebrow">Lima, Perú · En tiempo real</div>
+
+    <h1>Seguridad ciudadana<br><span>en tus manos</span></h1>
+
+    <p class="hero-sub">
+      Reporta incidentes, recibe alertas y mantente informado de lo que ocurre en tu distrito. Una plataforma hecha por y para los ciudadanos del Perú.
+    </p>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-val">Lima</span>
+        <span class="stat-label">Cobertura actual</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <span class="stat-val">24/7</span>
+        <span class="stat-label">Alertas en vivo</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <span class="stat-val">100%</span>
+        <span class="stat-label">Ciudadano</span>
+      </div>
+    </div>
   </section>
 
-  <div class="cards">
-    <a href="privacy-policy" class="card privacy">
-      <div class="card-icon privacy">🔒</div>
-      <div class="card-title">Política de Privacidad</div>
-      <div class="card-desc">
-        Conoce cómo recopilamos, usamos y protegemos tu información personal,
-        incluyendo ubicación, identidad y datos de contacto. Cumplimos la Ley N° 29733 del Perú.
-      </div>
-      <div class="card-link">Leer política →</div>
-    </a>
+  <section class="section">
+    <p class="section-label">Documentos legales</p>
+    <h2 class="section-title">Transparencia y privacidad</h2>
 
-    <a href="terms" class="card terms">
-      <div class="card-icon terms">📋</div>
-      <div class="card-title">Términos y Condiciones</div>
-      <div class="card-desc">
-        Conoce las reglas de uso de Auxira, tus derechos como usuario y las
-        condiciones de los servicios que ofrecemos.
-      </div>
-      <div class="card-link">Leer términos →</div>
-    </a>
-  </div>
+    <div class="cards">
+      <a href="privacy-policy.html" class="card privacy">
+        <div class="card-top">
+          <div class="card-icon">🔒</div>
+          <span class="card-tag">Privacidad</span>
+        </div>
+        <div class="card-title">Política de Privacidad</div>
+        <div class="card-desc">
+          Conoce exactamente qué datos recopilamos, cómo los usamos y cómo los protegemos. Tu información es tuya — nosotros solo la usamos para darte el mejor servicio. Cumplimos la Ley N° 29733 del Perú.
+        </div>
+        <div class="card-footer">
+          <span class="card-link">Leer política →</span>
+          <span class="card-date">Vigente desde abril 2026</span>
+        </div>
+      </a>
 
-  <div class="divider"></div>
+      <a href="terms.html" class="card terms">
+        <div class="card-top">
+          <div class="card-icon">📋</div>
+          <span class="card-tag">Términos</span>
+        </div>
+        <div class="card-title">Términos y Condiciones</div>
+        <div class="card-desc">
+          Las reglas de uso de Auxira, tus derechos como usuario, las condiciones del servicio y la normativa que nos rige como plataforma ciudadana independiente bajo la ley peruana.
+        </div>
+        <div class="card-footer">
+          <span class="card-link">Leer términos →</span>
+          <span class="card-date">Vigente desde abril 2026</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="disclaimer">
+      <span class="disclaimer-icon">⚖️</span>
+      <p class="disclaimer-text">
+        <strong>Aviso Legal:</strong> Auxira es una plataforma ciudadana independiente. No representamos ni estamos afiliados a ninguna entidad gubernamental, municipal, policial o de emergencias del Perú. La información publicada en la app proviene de reportes ciudadanos y fuentes públicas oficiales.
+      </p>
+    </div>
+  </section>
 
   <footer>
-    © 2026 <a href="https://github.com/BYDITSOLUTIONS" target="_blank">BYDIT Solutions</a> · Auxira · Perú
-    <br /><br />
-    Consultas: <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>
+    <p class="footer-brand">© 2026 BYDIT Solutions · Auxira · Perú</p>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacidad</a>
+      <span>·</span>
+      <a href="terms.html">Términos</a>
+      <span>·</span>
+      <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>
+    </div>
   </footer>
 
 </body>
