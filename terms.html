@@ -1,467 +1,257 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PE">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Términos y Condiciones — Auxira</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Términos y Condiciones de Uso de Auxira, v2.0, 27 de setiembre de 2026.">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
-      --bg: #060614;
-      --surface: rgba(255,255,255,0.035);
-      --surface2: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.07);
-      --text: #eeeef8;
-      --text2: #a0a0c0;
-      --text3: #606080;
-      --indigo: #6366f1;
-      --indigo-light: #818cf8;
-      --cyan: #22d3ee;
-      --cyan-soft: rgba(34,211,238,0.1);
-      --indigo-soft: rgba(99,102,241,0.1);
-      --purple: #a78bfa;
-      --purple-soft: rgba(167,139,250,0.1);
+      --bg: #ffffff;
+      --text: #1f2937;
+      --text-muted: #6b7280;
+      --accent: #6366f1;
+      --border: #e5e7eb;
+      --card: #f9fafb;
     }
-
-    html { scroll-behavior: smooth; }
-
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --accent: #818cf8;
+        --border: #334155;
+        --card: #1e293b;
+      }
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
+      margin: 0; padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.6;
     }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px);
-      background-size: 48px 48px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 0 32px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(6,6,20,0.75);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-left { display: flex; align-items: center; gap: 16px; }
-
-    .nav-back {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--text3);
-      text-decoration: none;
-      transition: color 0.2s;
-      padding: 6px 12px;
-      border-radius: 8px;
-      border: 1px solid transparent;
-    }
-    .nav-back:hover { color: var(--indigo-light); border-color: rgba(99,102,241,0.2); background: var(--indigo-soft); }
-
-    .nav-sep { width: 1px; height: 20px; background: var(--border); }
-
-    .nav-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text2);
-    }
-
-    .nav-badge {
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--indigo-light);
-      background: var(--indigo-soft);
-      border: 1px solid rgba(99,102,241,0.25);
-      border-radius: 100px;
-      padding: 3px 10px;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      z-index: 1;
-      padding: 120px 24px 72px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .hero-glow {
-      position: absolute;
-      top: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 600px; height: 400px;
-      background: radial-gradient(ellipse, rgba(99,102,241,0.15) 0%, rgba(167,139,250,0.05) 50%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-icon {
-      width: 72px; height: 72px;
-      border-radius: 20px;
-      background: var(--indigo-soft);
-      border: 1px solid rgba(99,102,241,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      margin-bottom: 28px;
-      box-shadow: 0 0 30px rgba(99,102,241,0.2);
-      animation: floatIn 0.7s cubic-bezier(.22,.68,0,1.2) both;
-    }
-
-    .hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -1px;
-      background: linear-gradient(135deg, var(--indigo-light) 0%, var(--purple) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 12px;
-      animation: fadeUp 0.6s 0.15s ease both;
-    }
-
-    .hero-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      animation: fadeUp 0.6s 0.25s ease both;
-    }
-
-    .hero-date { font-size: 0.8rem; color: var(--text3); display: flex; align-items: center; gap: 6px; }
-
-    .law-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--indigo-soft);
-      border: 1px solid rgba(99,102,241,0.2);
-      border-radius: 100px;
-      padding: 4px 12px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--indigo-light);
-    }
-
-    /* ── CONTENT ── */
-    .content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 24px 100px;
-      animation: fadeUp 0.5s 0.3s ease both;
-    }
-
-    .intro-box {
-      background: linear-gradient(135deg, rgba(99,102,241,0.06), rgba(167,139,250,0.04));
-      border: 1px solid rgba(99,102,241,0.18);
-      border-radius: 18px;
-      padding: 28px 32px;
-      margin-bottom: 56px;
-      font-size: 0.93rem;
-      line-height: 1.8;
-      color: var(--text2);
-      font-weight: 300;
-    }
-    .intro-box strong { color: var(--indigo-light); font-weight: 600; }
-    .intro-box a { color: var(--indigo-light); text-decoration: none; }
-    .intro-box a:hover { text-decoration: underline; }
-
-    .block { margin-bottom: 48px; }
-
-    .block h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      letter-spacing: -0.3px;
-    }
-
-    .num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--indigo-light);
-      background: var(--indigo-soft);
-      border: 1px solid rgba(99,102,241,0.2);
-      border-radius: 6px;
-      padding: 2px 8px;
-    }
-
-    p {
-      font-size: 0.92rem;
-      line-height: 1.8;
-      color: var(--text2);
-      margin-bottom: 14px;
-      font-weight: 300;
-    }
-
-    .items { display: flex; flex-direction: column; gap: 10px; margin: 14px 0; }
-
-    .item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 18px;
-      font-size: 0.88rem;
-      color: var(--text2);
-      line-height: 1.65;
-      font-weight: 300;
-      transition: border-color 0.2s;
-    }
-    .item:hover { border-color: rgba(99,102,241,0.25); }
-    .item strong { color: var(--text); font-weight: 600; }
-
-    .links { display: flex; flex-direction: column; gap: 8px; margin: 14px 0; }
-
-    .link-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      background: var(--surface);
+    .container { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+    header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+    h1 { font-size: 28px; margin: 0 0 8px; }
+    h2 { font-size: 19px; margin: 32px 0 12px; color: var(--accent); }
+    p, li { font-size: 15px; }
+    li { margin-bottom: 6px; }
+    .version { color: var(--text-muted); font-size: 13px; }
+    .essentials {
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 10px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      color: var(--indigo-light);
-      font-weight: 500;
-      transition: all 0.2s;
+      padding: 16px 20px;
+      margin: 12px 0 28px;
     }
-    .link-item:hover { border-color: rgba(99,102,241,0.4); background: var(--indigo-soft); color: #c7d2fe; }
-    .link-item::before { content: '↗'; font-size: 0.75rem; opacity: 0.5; }
-
-    .box-alert {
-      background: rgba(167,139,250,0.07);
-      border: 1px solid rgba(167,139,250,0.2);
-      border-radius: 14px;
-      padding: 20px 22px;
-      margin-top: 16px;
-      font-size: 0.87rem;
-      color: var(--purple);
-      line-height: 1.7;
-      font-weight: 300;
+    .essentials ul { margin: 0; padding-left: 20px; }
+    .changes {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 12px 0 28px;
     }
-    .box-alert strong { font-weight: 600; }
-
-    .box-info {
-      background: rgba(34,211,238,0.05);
-      border: 1px solid rgba(34,211,238,0.15);
-      border-radius: 14px;
-      padding: 18px 22px;
-      margin-top: 16px;
-      font-size: 0.87rem;
-      color: var(--cyan);
-      line-height: 1.7;
-      font-weight: 300;
-    }
-
-    footer {
-      position: relative;
-      z-index: 1;
-      padding: 32px 24px;
-      text-align: center;
+    .changes ul { margin: 0; padding-left: 20px; }
+    .accept-note {
+      margin-top: 40px;
+      padding-top: 16px;
       border-top: 1px solid var(--border);
+      font-weight: 600;
     }
-
-    .footer-brand {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.82rem;
-      color: var(--text3);
-      margin-bottom: 8px;
+    .footer-note {
+      margin-top: 24px; padding-top: 20px;
+      color: var(--text-muted); font-size: 13px;
     }
-
-    .footer-links {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      font-size: 0.78rem;
-    }
-    .footer-links a { color: var(--text3); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--indigo-light); }
-    .footer-links span { color: var(--border); }
-
-    @keyframes floatIn {
-      from { opacity: 0; transform: scale(0.8) translateY(16px); }
-      to   { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      nav { padding: 0 16px; }
-      .hero { padding: 100px 20px 56px; }
-      .hero h1 { font-size: 1.9rem; }
-      .intro-box { padding: 20px 20px; }
-      .content { padding: 0 16px 80px; }
-    }
+    a { color: var(--accent); }
+    nav.toc { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 28px; font-size: 14px; }
+    nav.toc a { display: block; padding: 3px 0; text-decoration: none; }
   </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>Términos y Condiciones de Uso de Auxira</h1>
+      <p class="version">Versión v2.0 — 27 de setiembre de 2026</p>
+    </header>
 
-  <nav>
-    <div class="nav-left">
-      <a class="nav-back" href="index.html">← Inicio</a>
-      <div class="nav-sep"></div>
-      <span class="nav-title">Términos y Condiciones</span>
+    <h2>Lo esencial</h2>
+    <div class="essentials">
+      <ul>
+        <li>Auxira es una app ciudadana, no una entidad del Estado: no sustituye a la Policía (105), Bomberos (116), SAMU (106) ni al Serenazgo.</li>
+        <li>Auxira es para personas de 14 años o más; no admitimos cuentas de menores de 14.</li>
+        <li>Leemos tu ubicación solo cuando tienes la app abierta; guardamos la última posición para avisarte de alertas cercanas aunque después cierres la app.</li>
+        <li>Verificar tu DNI es voluntario; nunca guardamos el número completo, solo una huella protegida con una clave secreta que únicamente tiene nuestro servidor.</li>
+        <li>Puedes bloquear y reportar a otros usuarios; sigue siendo tu responsabilidad lo que publicas.</li>
+        <li>Los puntos, las rachas y las medallas de Auxira son solo para usarlos dentro de la app: no valen dinero, no dan premios y no se pueden cambiar por dinero.</li>
+        <li>Si usas Familia, decides tú, familiar por familiar, quién ve tu última ubicación; si usas Ventas, Auxira solo te conecta con la otra persona, no vende ni garantiza nada.</li>
+        <li>Compartimos datos con Google, Supabase, Railway, Cloudflare y Apple para que la app funcione — nunca los vendemos.</li>
+        <li>Puedes eliminar tu cuenta desde la app al instante, o por correo si no la tienes instalada.</li>
+      </ul>
     </div>
-    <span class="nav-badge">📋 Términos</span>
-  </nav>
 
-  <div class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-icon">📋</div>
-    <h1>Términos y Condiciones</h1>
-    <div class="hero-meta">
-      <span class="hero-date">📅 Vigente desde el 3 de abril de 2026</span>
-      <span class="law-pill">⚖️ Ley peruana aplicable</span>
+    <h2>Qué cambió respecto a la versión anterior (v1.2)</h2>
+    <div class="changes">
+      <ul>
+        <li>Subimos la edad mínima de 13 a 14 años. Ya no admitimos cuentas de menores de 14, así que no existe una vía de permiso de un padre, madre o apoderado para usar Auxira por debajo de esa edad.</li>
+        <li>Agregamos "Persona perdida" como tipo de alerta: exige tener el DNI verificado y no se puede publicar de forma anónima.</li>
+        <li>Agregamos Familia: compartir tu última ubicación con quien tú elijas y una alarma para pedir ayuda a tu familia.</li>
+        <li>Agregamos Ventas: anuncios de productos y negocios cerca de ti, dentro de Noticias.</li>
+        <li>Ahora puedes borrar una alerta tuya cuando quieras: se borra junto con sus comentarios, reacciones, votos y foto.</li>
+        <li>Ahora puedes bloquear y reportar a otros usuarios; lo explicamos en un punto propio.</li>
+        <li>Corregimos cómo describíamos la eliminación de cuenta: es inmediata desde la app, no en 30 días.</li>
+        <li>Precisamos que guardamos tu última posición para avisarte de alertas cercanas por notificación aunque la app esté cerrada (no leemos tu GPS en segundo plano, usamos la última que nos enviaste).</li>
+        <li>Sumamos Iniciar sesión con Apple y las compras del App Store; sacamos la mención a las apuestas de puntos en Sudoku, esa función ya no existe.</li>
+        <li>Aclaramos que "Contactos de confianza" se guarda solo en tu teléfono: nunca llega a nuestros servidores.</li>
+        <li>Quitamos la Ruleta de Sorteo y los datos sísmicos (USGS): ya no existen en la app.</li>
+      </ul>
     </div>
+
+    <h2>1. Qué es Auxira y quién la ofrece</h2>
+    <p>Auxira es una aplicación para reportar y consultar alertas geolocalizadas en el Perú: incidentes de seguridad, emergencias y avisos comunitarios. La ofrece D &amp; B IT-SOLUTIONS S.A.C. (RUC 20615919293), con domicilio fiscal en Calle San Lino 6215-B, Urb. Santa Luisa II Etapa, Los Olivos, Lima, Perú.</p>
+    <p>Auxira es intermediaria entre quien publica una alerta y quien la consulta. No es la autora del contenido que publican los usuarios.</p>
+
+    <h2>2. Auxira no es una entidad del Estado</h2>
+    <p>Auxira es una plataforma ciudadana independiente. No representamos a la Policía Nacional, a ningún municipio, a los Bomberos ni a ninguna entidad pública. La información de la app viene de reportes de otros usuarios y, cuando lo indicamos, de fuentes públicas oficiales.</p>
+    <p>Auxira no sustituye a los servicios oficiales de emergencia. Si necesitas ayuda urgente, llama directamente a la Policía (105), Bomberos (116), SAMU (106) o al Serenazgo de tu distrito.</p>
+
+    <h2>3. Quién puede usar Auxira</h2>
+    <p>Auxira es para personas de 14 años o más. Si tienes entre 14 y 17 años, la ley te permite aceptar por tu cuenta el uso de tus datos (Reglamento de la Ley 29733, D.S. 016-2024-JUS, artículo 22.2); por eso te explicamos todo en lenguaje sencillo. No admitimos cuentas de menores de 14. Te pedimos tu fecha de nacimiento para comprobar tu edad y tomamos medidas razonables para verificarla: darnos una fecha de nacimiento falsa incumple estos Términos y podemos cerrar la cuenta.</p>
+    <p>Tu fecha de nacimiento se registra una sola vez, al completar tu perfil, y no se puede editar después desde la app. Si la registraste mal, escríbenos a <a href="mailto:soporte@dybitsolutions.pe">soporte@dybitsolutions.pe</a>.</p>
+    <p>Algunas funciones dentro de Auxira piden una edad mayor: publicar un anuncio en Ventas requiere 18 años o más (sección 11), porque a esa edad se adquiere la plena capacidad para contratar (artículo 42 del Código Civil). Si tienes entre 14 y 17 años, cualquier compra que acuerdes con alguien que publica en Ventas debe hacerla o autorizarla tu padre, madre o tutor.</p>
+    <p>Si nos enteramos de que una cuenta pertenece a un menor de 14 años, la eliminamos.</p>
+
+    <h2>4. Tu cuenta</h2>
+    <p>Entras a Auxira con tu cuenta de Google, con Iniciar sesión con Apple (en iPhone) o con tu número de teléfono. Eres responsable de mantener segura tu cuenta y de todo lo que ocurra a través de ella.</p>
+
+    <h2>5. Lo que publicas es tu responsabilidad</h2>
+    <p>Eres responsable directo y exclusivo de todo lo que publiques en Auxira: alertas, fotos, comentarios, mensajes del chat vecinal y anuncios en Ventas. Eso incluye que la información sea verdadera, que no viole la privacidad, el honor o la imagen de otra persona, y que respete las leyes peruanas (entre otras, la Ley 29733 de Protección de Datos Personales, la Ley 30096 de Delitos Informáticos, el Decreto Legislativo 822 de Derechos de Autor y el Código Penal).</p>
+    <p>Auxira no revisa cada publicación antes de que salga al público. Las herramientas automáticas que usamos (sección 7) ayudan, pero no garantizan detectar todo lo problemático.</p>
+
+    <h2>6. Contenido prohibido</h2>
+    <p>No puedes usar Auxira para:</p>
+    <ul>
+      <li>Publicar acusaciones sin sustento contra personas identificables ("funas").</li>
+      <li>Difundir información falsa, manipulada o sacada de contexto para dañar a alguien.</li>
+      <li>Publicar datos personales de otra persona sin su consentimiento: nombre, dirección, teléfono, trabajo o datos familiares.</li>
+      <li>Amenazar, incitar al odio, discriminar o acosar a alguien.</li>
+      <li>Publicar contenido sobre menores de edad sin el consentimiento de sus padres o tutores.</li>
+      <li>Suplantar a otra persona, autoridad o institución.</li>
+    </ul>
+    <p>Publicar una "funa" sin sustento puede constituir delito de difamación, calumnia o injuria (artículos 130 a 132 del Código Penal). Si lo haces, las consecuencias civiles y penales son tuyas, no de Auxira.</p>
+
+    <h2>7. Moderación automática de fotos</h2>
+    <p>Cuando subes una foto, la analizamos automáticamente con Google Cloud Vision API: rechazamos las que muestran contenido sexual o violencia explícita, y aplicamos un difuminado (blur) automático a los rostros que el sistema detecta, para proteger a terceros que aparezcan sin querer.</p>
+    <p>Una foto solo se publica después de que el difuminado se aplicó con éxito: si el sistema detecta un rostro y falla al difuminarlo, no publicamos esa foto. Pero el sistema puede no detectar todos los rostros: no siempre reconoce rostros parciales, de perfil, con mascarilla o gafas, o con mala luz. Si no detecta un rostro, no hay nada que difuminar y la foto se publica igual. Nunca asumas que el blur protegió por completo a alguien. Antes de publicar una foto, verifica tú mismo que no exponga a otra persona identificable sin su consentimiento. Si igual la publicas y expone a un tercero, la responsabilidad es tuya, aunque el sistema automático haya fallado en detectarlo.</p>
+
+    <h2>8. Verificación de tu DNI</h2>
+    <p>Puedes verificar tu identidad de forma voluntaria escribiendo tu DNI, tu nombre y tu dirección. Lo confirmamos contra RENIEC a través de <a href="https://decolecta.com" target="_blank" rel="noopener">Decolecta</a>, un proveedor autorizado. Nunca guardamos tu número de DNI completo: solo una huella protegida con una clave secreta que vive únicamente en nuestro servidor (sin ella, nadie puede recuperar tu DNI a partir de la huella) y su último dígito, para poder detectar duplicados y disputas. Tu dirección se guarda cifrada.</p>
+    <p>Si tu nombre coincide con el que registra RENIEC, lo guardamos como tu nombre verificado (displayName). Otros usuarios NUNCA lo ven en tus alertas, comentarios o el chat vecinal — ahí siguen viendo tu nick. Sí lo ve Soporte, y si perteneces a un equipo (municipal, bomberos), también lo ven sus jefes.</p>
+    <p>Guardamos cada intento de verificación (la huella del DNI usado, el resultado, tu dirección IP y tu dispositivo) para prevenir fraude; ese registro se borra a los 24 meses.</p>
+    <p>Si dos cuentas verifican el mismo DNI, se abre una disputa: la cuenta más nueva queda bloqueada para publicar hasta que la resuelva enviando una foto tipo selfie a Soporte. Si no apela en 30 días, el caso pasa a revisión manual.</p>
+
+    <h2>9. Alertas de "Persona perdida"</h2>
+    <p>"Persona perdida" es un tipo de alerta pensado para buscar a alguien con ayuda de la comunidad. Para publicarla necesitas tener tu DNI verificado (sección 8) y no puedes hacerlo de forma anónima: siempre queda asociada a tu cuenta, aunque otros usuarios sigan viendo tu nick, no tu nombre verificado.</p>
+    <p>De forma opcional puedes agregar el rango de edad, la ropa que llevaba y cuánto tiempo lleva sin aparecer. Auxira agrega automáticamente un mensaje pidiendo compartir la alerta y llamar al 105 si la ves.</p>
+    <p>Mientras está activa, llega como notificación a usuarios cercanos, igual que las demás alertas de emergencia. Cuando se marca como resuelta, su foto deja de mostrarse en el feed y en el mapa que ve el público (sigue existiendo en nuestros registros).</p>
+
+    <h2>10. Familia</h2>
+    <p>Familia es una función aparte y opcional para conectarte con quien tú elijas (no hace falta que sean parientes de verdad) y compartir, si ambos aceptan, la última ubicación. La primera vez que la abres te pedimos un consentimiento propio, adicional a este documento, explicando exactamente qué hace.</p>
+    <p>Compartimos tu nombre, tu foto y, si tú lo activas, tu última ubicación, que leemos solo mientras tienes la app abierta: no hay seguimiento en segundo plano ni historial de lugares. Está apagado por defecto y lo activas o pausas familiar por familiar, sin que le avisemos a nadie.</p>
+    <p>La alarma familiar es distinta: al usarla, enviamos tu última ubicación a todos tus familiares conectados aunque no la estés compartiendo con ellos. Se lo decimos en el consentimiento de Familia antes de que la actives, y esa ubicación deja de estar disponible para ellos 24 horas después de enviada.</p>
+    <p>Puedes retirar tu consentimiento de Familia cuando quieras con "Dejar de usar Familia": eso apaga de inmediato que compartas tu ubicación con todos tus familiares. No borra tus conexiones, que puedes quitar una por una si lo prefieres. También puedes bloquear a un familiar.</p>
+    <p>Familia es para personas de 14 años o más y solo funciona si cada persona acepta, desde su propio teléfono y su propia cuenta, compartir su ubicación. Está prohibido usar Familia para vigilar a otra persona sin su consentimiento, por ejemplo: activar o aceptar Familia en el teléfono o en la cuenta de otra persona sin que lo sepa, presionar a alguien para que comparta su ubicación, o usar la ubicación compartida para seguir, controlar o intimidar a alguien. Además de incumplir estos Términos, estas conductas pueden constituir delitos como el acoso (artículo 151-A del Código Penal, que incluye vigilar a una persona sin su consentimiento usando tecnologías de la información), la violación de la intimidad (artículo 154 del Código Penal) o el acceso ilícito a un sistema informático (artículo 2 de la Ley 30096). Si detectamos ese uso o nos lo reportan, desactivamos Familia para esa cuenta o la suspendemos, y colaboramos con las autoridades según la sección 17. Si crees que alguien te está vigilando, puedes dejar de compartir tu ubicación al instante con "Dejar de usar Familia" y bloquear a esa persona.</p>
+
+    <h2>11. Ventas y compras</h2>
+    <p>Ventas es un servicio gratuito de anuncios dentro de Noticias, donde cualquier usuario de 18 años o más puede publicar un producto, una tienda física o una venta al paso (ambulante). D &amp; B IT-SOLUTIONS S.A.C. es responsable de que este servicio funcione como lo describimos aquí: mostrar tu anuncio, aplicar el filtro automático, revisar los reportes y retirar lo que incumpla estas reglas. Pero no es parte de la compraventa: no vende, no cobra ni recibe pagos o comisiones, no entrega productos y no verifica que quien publica realmente tenga o vaya a entregar lo que ofrece. La compra se acuerda directamente entre el comprador y quien publica.</p>
+    <p>Quien publica es el único responsable de lo que ofrece: que exista, su estado, su precio, que sea legal, su entrega y su garantía. Si vendes como negocio, además debes cumplir tus propias obligaciones como proveedor frente a tus compradores, entre ellas las del Código de Protección y Defensa del Consumidor.</p>
+    <p>Mientras tu anuncio está vigente, se muestra la ubicación exacta que registraste (en una venta al paso, solo la del día que confirmaste "Estoy aquí hoy"). Tu número de teléfono no aparece en la lista de anuncios: se muestra únicamente si tú diste tu consentimiento al publicar y la otra persona toca el botón para revelarlo.</p>
+    <p>No puedes publicar armas, pirotecnia, drogas, medicinas con receta, alcohol o tabaco, fauna silvestre, falsificaciones, bienes robados, celulares sin IMEI, servicios sexuales, préstamos o "inversiones", documentos de identidad, ni contenido para adultos. Usamos un filtro automático y revisamos los reportes de otros usuarios; Soporte puede retirar un anuncio que incumpla estas reglas.</p>
+    <p>Un anuncio vence a los 30 días: al vencer o si lo borras, su foto y su ubicación exacta se eliminan de nuestros servidores.</p>
+    <p>Ten cuidado con las estafas: Auxira no verifica que quien publica un anuncio realmente tenga o vaya a entregar lo que ofrece. No pagues por adelantado a alguien que no conoces, desconfía de precios demasiado buenos y prefiere ver el producto en persona antes de pagar. Si te estafan o detectas un anuncio sospechoso, repórtalo desde la app.</p>
+    <p>Si tienes un problema con cómo funciona Ventas —por ejemplo, que no atendimos un reporte que hiciste—, puedes usar nuestro Libro de Reclamaciones (sección 22). Si fuiste víctima de una estafa u otro delito, denúncialo en la comisaría o ante el Ministerio Público: colaboramos con las autoridades según la sección 17.</p>
+    <p>Nada de lo anterior limita los derechos que la ley te reconoce como consumidor ni nuestra responsabilidad por nuestros propios actos.</p>
+
+    <h2>12. Chat vecinal: bloquear y reportar</h2>
+    <p>Auxira tiene un chat vecinal por distrito. Puedes bloquear a cualquier usuario desde un comentario o un mensaje suyo: dejas de ver lo que escribe en el chat y en los comentarios de alertas. El bloqueo es privado (la otra persona no se entera) y puedes deshacerlo cuando quieras desde tu lista de bloqueados.</p>
+    <p>El bloqueo no oculta las alertas que publica la persona bloqueada: son información de seguridad pública y ocultarlas podría poner en riesgo a otros usuarios.</p>
+    <p>También puedes reportar un comentario o una alerta que incumpla estas reglas. Un comentario reportado varias veces se oculta automáticamente mientras lo revisamos.</p>
+
+    <h2>13. Moderación y sanciones</h2>
+    <p>Auxira puede:</p>
+    <ul>
+      <li>Eliminar publicaciones que incumplan estos Términos.</li>
+      <li>Suspender o cerrar cuentas que usen mal la plataforma.</li>
+      <li>Limitar cuántas alertas puedes publicar por día, o pedirte esperar entre una y otra.</li>
+      <li>Aplicar sanciones automáticas si el sistema detecta un patrón de abuso.</li>
+    </ul>
+    <p>Si no estás de acuerdo con una sanción, puedes apelarla escribiendo a <a href="mailto:soporte@dybitsolutions.pe">soporte@dybitsolutions.pe</a>.</p>
+
+    <h2>14. Puntos, tienda, compras y juegos</h2>
+    <p>Auxira tiene una tienda dentro de la app donde puedes comprar puntos y la suscripción VIP, a través de Google Play (Android) o de la App Store (iOS). También puedes ganar puntos viendo anuncios o participando en la app.</p>
+    <p>Los puntos de Auxira no tienen valor monetario: no se pueden cambiar por dinero, ni transferir a otra persona, ni retirar. Solo sirven para usarlos dentro de la app: desbloquear vidas o intentos en los juegos, personalizar tu perfil o canjearlos por ofertas dentro de la tienda.</p>
+    <p>Auxira tiene juegos de habilidad y entretenimiento: Sudoku, Damas, "Un Clásico" y Buscaminas. No se apuesta dinero real ni puntos entre jugadores: ganar o perder solo afecta tu saldo interno de puntos, cuando el juego usa puntos.</p>
+    <p>Algunos juegos tienen rachas (días seguidos jugando), un Reto del Día y medallas por logros. Ninguno de ellos tiene valor: no dan puntos, no son canjeables y no se pueden transferir. En algunos juegos, al perder puedes ver un video publicitario para tener una segunda oportunidad en esa misma partida; eso no aplica dentro del Reto del Día, donde todos compiten en las mismas condiciones.</p>
+    <p>Las compras dentro de la app se procesan y facturan a través de Google Play o de Apple, según tu dispositivo, y sus políticas de reembolso son las que aplican a ese pago. Sin perjuicio de eso, si tienes un problema con lo que compraste en Auxira (puntos, VIP), puedes reclamarnos directamente por nuestro Libro de Reclamaciones (sección 22).</p>
+
+    <h2>15. Publicidad</h2>
+    <p>Auxira muestra anuncios a través de Google AdMob. En iPhone, te pedimos permiso para usar tu identificador de publicidad (seguimiento) antes de mostrarte anuncios más relevantes; si lo niegas, seguirás viendo anuncios, solo que menos personalizados.</p>
+
+    <h2>16. Servicios de terceros que usamos</h2>
+    <p>Auxira funciona apoyada en servicios de otras empresas, cada una con sus propios términos:</p>
+    <ul>
+      <li>Google / Firebase — inicio de sesión, notificaciones push y mapas: <a href="https://policies.google.com/terms" target="_blank" rel="noopener">policies.google.com/terms</a></li>
+      <li>Google Cloud Vision API — moderación automática de fotos: <a href="https://cloud.google.com/terms" target="_blank" rel="noopener">cloud.google.com/terms</a></li>
+      <li>Google AdMob — anuncios: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></li>
+      <li>Firebase Crashlytics (Google) — reporte automático de cierres inesperados de la app, solo en la versión publicada: <a href="https://policies.google.com/terms" target="_blank" rel="noopener">policies.google.com/terms</a></li>
+      <li>Apple — Iniciar sesión con Apple y compras en iPhone: <a href="https://www.apple.com/legal/" target="_blank" rel="noopener">apple.com/legal</a></li>
+      <li>Supabase — almacenamiento de fotos y base de datos: <a href="https://supabase.com/terms" target="_blank" rel="noopener">supabase.com/terms</a></li>
+      <li>Railway — servidor donde corre Auxira: <a href="https://railway.com/legal/terms" target="_blank" rel="noopener">railway.com/legal/terms</a></li>
+      <li>Cloudflare — protección del tráfico de la app: <a href="https://www.cloudflare.com/terms/" target="_blank" rel="noopener">cloudflare.com/terms</a></li>
+      <li>Decolecta — verificación de DNI ante RENIEC: <a href="https://decolecta.com" target="_blank" rel="noopener">decolecta.com</a></li>
+    </ul>
+    <p>Auxira no controla estos servicios y no responde por cambios en sus propios términos o disponibilidad.</p>
+
+    <h2>17. Cooperación con autoridades</h2>
+    <p>Colaboramos con la Policía Nacional, el Ministerio Público, el Poder Judicial y la Defensoría del Pueblo cuando hay una solicitud formal con base legal (por ejemplo, una orden judicial o un requerimiento fiscal). Podemos entregar datos de tu cuenta, el registro de que aceptaste estos Términos y registros de actividad relacionados con una investigación.</p>
+    <p>Publicar una alerta como anónima solo oculta tu identidad frente a otros usuarios de la app: nuestro servidor siempre sabe quién la publicó. El equipo de Soporte de Auxira puede consultar esa identidad cuando haga falta para moderar (por ejemplo, ante un abuso reportado) o para responder un requerimiento legal como los del párrafo anterior.</p>
+    <p>Las municipalidades y compañías de bomberos que se registran en Auxira ven, en un panel propio, las alertas de su distrito o de los distritos que tienen asignados; sus miembros solo pueden consultarlas, no editarlas. No ven tu nombre verificado salvo que también seas parte de su equipo (sección 8).</p>
+
+    <h2>18. Qué no garantizamos</h2>
+    <p>Auxira no garantiza:</p>
+    <ul>
+      <li>Que el contenido publicado por otros usuarios sea exacto o esté actualizado.</li>
+      <li>Que el servicio esté disponible sin interrupciones (puede haber mantenimientos o fallas técnicas).</li>
+      <li>Que la información de la app sea suficiente para decidir sobre tu seguridad. Auxira es una herramienta informativa complementaria, no un sustituto de la Policía, Bomberos, SAMU o Serenazgo.</li>
+    </ul>
+    <p>No nos hacemos responsables por decisiones que tomes basándote en información de otros usuarios, por daños de información falsa publicada por terceros, ni por el uso indebido de la plataforma por parte de otra persona. Los cargos de datos móviles de tu operador son responsabilidad tuya. Nada de esto nos exime de responder por dolo o culpa nuestra, ni por no cumplir lo que te ofrecemos en estos Términos.</p>
+
+    <h2>19. Tu contenido y nuestra propiedad</h2>
+    <p>El contenido que publicas (alertas, fotos, comentarios, mensajes) sigue siendo tuyo. Al publicarlo, le das a Auxira permiso para mostrarlo y procesarlo dentro de la app, solo para prestar el servicio.</p>
+    <p>Puedes borrar una alerta tuya cuando quieras desde la app: se elimina junto con sus comentarios, reacciones, votos y foto. Si quieres que retiremos un comentario o un mensaje del chat vecinal en particular, escríbenos a <a href="mailto:soporte@dybitsolutions.pe">soporte@dybitsolutions.pe</a>. Ese permiso no le quita la propiedad a tu contenido y termina cuando lo borras o eliminas tu cuenta, salvo copias que otros usuarios ya hayan guardado mientras la publicación estaba activa.</p>
+    <p>El diseño, el código, las marcas y los logotipos de Auxira son propiedad de D &amp; B IT-SOLUTIONS S.A.C. No está permitido copiarlos, modificarlos ni usarlos comercialmente sin autorización.</p>
+
+    <h2>20. Cambios a estos Términos</h2>
+    <p>Podemos actualizar estos Términos. Si el cambio es importante, te lo mostraremos de nuevo la próxima vez que abras la app y te pediremos aceptarlo para seguir usándola.</p>
+
+    <h2>21. Ley aplicable y atención al consumidor</h2>
+    <p>Estos Términos se rigen por las leyes de la República del Perú. Cualquier controversia se resuelve ante los tribunales de Lima, Perú. Esto no limita tu derecho, como consumidor, de acudir al INDECOPI ni a otras vías de solución de controversias.</p>
+    <p>Para consultas, reclamos o quejas sobre el servicio, escríbenos a <a href="mailto:soporte@dybitsolutions.pe">soporte@dybitsolutions.pe</a>.</p>
+
+    <h2>22. Libro de Reclamaciones</h2>
+    <p>Auxira tiene un Libro de Reclamaciones virtual, conforme al Código de Protección y Defensa del Consumidor (Ley 29571) y su Reglamento. D &amp; B IT-SOLUTIONS S.A.C. (RUC 20615919293), con domicilio en Calle San Lino 6215-B, Urb. Santa Luisa II Etapa, Los Olivos, Lima, es la responsable de atenderlo. Lo encuentras dentro de la app en Configuración › Libro de Reclamaciones.</p>
+    <p>Reclamo: disconformidad relacionada con los productos o servicios. Queja: disconformidad no relacionada con los productos o servicios, o malestar o descontento respecto a la atención al público.</p>
+    <p>Al terminar de registrar tu reclamo o queja, te mostramos tu Hoja de Reclamación con su número, fecha y hora para que la guardes, y te enviamos automáticamente una copia al correo electrónico que nos indiques.</p>
+    <p>Te responderemos por escrito, por correo electrónico o por carta según elijas, en un plazo no mayor de quince (15) días hábiles improrrogables, contados desde el día siguiente a la presentación de tu reclamo o queja (Código de Protección y Defensa del Consumidor, artículo 24.1, modificado por la Ley 31435; Reglamento del Libro de Reclamaciones, artículos 6 y 6-B).</p>
+    <p>La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI.</p>
+
+    <h2>23. Contacto</h2>
+    <p>D &amp; B IT-SOLUTIONS S.A.C. — RUC 20615919293 — Los Olivos, Lima, Perú. Escríbenos a <a href="mailto:soporte@dybitsolutions.pe">soporte@dybitsolutions.pe</a>.</p>
+
+    <p class="accept-note">Al aceptar estos Términos, declaras que los has leído, entendido y aceptas su cumplimiento íntegro.</p>
+
+    <p class="footer-note">Versión v2.0 — 27 de setiembre de 2026 · Ver también la <a href="privacy.html">Política de Privacidad</a> y cómo <a href="eliminar-cuenta.html">eliminar tu cuenta</a>.</p>
   </div>
-
-  <div class="content">
-
-    <div class="intro-box">
-      Los presentes Términos regulan el acceso y uso de la aplicación móvil <strong>Auxira</strong>, desarrollada y operada por <strong>DYBIT SOLUTIONS</strong> — <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>.<br><br>
-      Al descargar, instalar o utilizar Auxira, declaras haber leído, comprendido y aceptado estos Términos en su totalidad. Si no estás de acuerdo, te pedimos que no uses la Aplicación.
-    </div>
-
-    <div class="block">
-      <h2><span class="num">01</span> Descripción del servicio</h2>
-      <p>Auxira es una plataforma ciudadana independiente para la publicación, consulta y gestión de alertas de seguridad y emergencias en el Perú.</p>
-      <div class="box-alert">
-        <strong>⚠️ Aviso Legal:</strong> No somos una entidad gubernamental ni representamos a ningún organismo público, municipal, policial o de emergencias. La información en la app proviene de reportes ciudadanos y fuentes públicas oficiales.
-      </div>
-    </div>
-
-    <div class="block">
-      <h2><span class="num">02</span> Registro y cuenta de usuario</h2>
-      <p>El registro se realiza mediante número de teléfono, sin contraseña. Algunas funciones adicionales requieren la validación voluntaria de identidad mediante DNI, procesada por <a href="https://decolecta.com" target="_blank" rel="noopener" style="color:var(--indigo-light);">Decolecta</a>, proveedor autorizado con base en datos de RENIEC.</p>
-      <p>Eres responsable de mantener la confidencialidad del acceso a tu cuenta y de toda actividad realizada desde ella.</p>
-    </div>
-
-    <div class="block">
-      <h2><span class="num">03</span> Uso aceptable</h2>
-      <p>Al usar Auxira te comprometes a:</p>
-      <div class="items">
-        <div class="item">✅ Publicar únicamente alertas verídicas y de buena fe.</div>
-        <div class="item">🚫 No publicar contenido falso, engañoso, ofensivo, discriminatorio o que incite a la violencia.</div>
-        <div class="item">🚫 No suplantar la identidad de otras personas, entidades o autoridades.</div>
-        <div class="item">🚫 No usar la app para actividades ilícitas según la legislación peruana vigente.</div>
-        <div class="item">🚫 No intentar acceder de forma no autorizada a los sistemas, servidores o cuentas de otros usuarios.</div>
-      </div>
-      <p style="margin-top:14px;">El Titular se reserva el derecho de suspender o eliminar cuentas que incumplan estas condiciones, sin perjuicio de las acciones legales correspondientes.</p>
-    </div>
-
-    <div class="block">
-      <h2><span class="num">04</span> Contenido del usuario</h2>
-      <p>Conservas la titularidad del contenido que publiques (fotos, texto, alertas). Al publicarlo, otorgas al Titular una licencia no exclusiva, gratuita y mundial para mostrarlo y distribuirlo dentro de Auxira con el fin de prestar el servicio.</p>
-      <p>El Titular no se responsabiliza por la veracidad, exactitud o legalidad del contenido publicado por los usuarios.</p>
-    </div>
-
-    <div class="block">
-      <h2><span class="num">05</span> Propiedad intelectual</h2>
-      <p>Todos los derechos de propiedad intelectual sobre Auxira — diseño, código fuente, marcas, logotipos y demás elementos — pertenecen al Titular o a sus licenciantes. Queda prohibida la copia, reproducción, modificación, distribución o uso comercial no autorizado de cualquier elemento de la app.</p>
-    </div>
-
-    <div class="block">
-      <h2><span class="num">06</span> Disponibilidad y modificaciones</h2>
-      <p>El Titular se reserva el derecho de modificar, suspender o discontinuar la app o cualquiera de sus funciones en cualquier momento, con o sin previo aviso. No garantizamos disponibilidad ininterrumpida del servicio.</p>
-      <p>El Titular podrá actualizar la app en cualquier momento. Para continuar usándola, es posible que debas aceptar dichas actualizaciones.</p>
-    </div>
-
-    <div class="block">
-      <h2><span class="num">07</span> Servicios de terceros</h2>
-      <p>Auxira integra servicios de terceros sujetos a sus propios términos:</p>
-      <div class="links">
-        <a class="link-item" href="https://policies.google.com/terms" target="_blank" rel="noopener">Google Play Services — Términos y Condiciones</a>
-        <a class="link-item" href="https://www.google.com/analytics/terms/" target="_blank" rel="noopener">Google Analytics for Firebase — Términos</a>
-        <a class="link-item" href="https://expo.io/terms" target="_blank" rel="noopener">Expo — Términos y Condiciones</a>
-        <a class="link-item" href="https://decolecta.com" target="_blank" rel="noopener">Decolecta — Validación de identidad</a>
-      </div>
-      <p style="margin-top:14px;">El uso de estos servicios implica la aceptación de sus respectivos términos.</p>
-    </div>
-
-    <div class="block">
-      <h2><span class="num">08</span> Limitación de responsabilidad</h2>
-      <p>Auxira se proporciona "tal cual" y "según disponibilidad". El Titular no garantiza que la app esté libre de errores o que la información mostrada sea siempre exacta.</p>
-      <div class="items">
-        <div class="item">No asumimos responsabilidad por daños directos o indirectos derivados del uso o imposibilidad de uso de la app.</div>
-        <div class="item">No garantizamos la veracidad de las alertas publicadas por otros usuarios.</div>
-        <div class="item">No asumimos responsabilidad por pérdidas ocasionadas por decisiones tomadas con base en la información de la app.</div>
-        <div class="item">No asumimos responsabilidad por fallas en la conectividad a internet o en los dispositivos del usuario.</div>
-      </div>
-      <div class="box-info">
-        ⚡ Algunas funciones requieren conexión a internet activa. Los cargos de datos de tu operador móvil son responsabilidad del usuario.
-      </div>
-    </div>
-
-    <div class="block">
-      <h2><span class="num">09</span> Ley aplicable y jurisdicción</h2>
-      <p>Estos Términos se rigen por las leyes de la República del Perú. Cualquier controversia se someterá a los tribunales competentes de Lima, Perú, salvo disposición legal imperativa en contrario.</p>
-    </div>
-
-    <div class="block">
-      <h2><span class="num">10</span> Cambios a estos Términos</h2>
-      <p>El Titular podrá actualizar estos Términos en cualquier momento. Los cambios se comunicarán actualizando esta página con la nueva fecha de vigencia. El uso continuado de la app implica la aceptación de los nuevos Términos.</p>
-    </div>
-
-    <div class="block">
-      <h2><span class="num">11</span> Contacto</h2>
-      <p>Para consultas sobre estos Términos:</p>
-      <div class="items">
-        <div class="item">📧 <a href="mailto:empresa@byditsolutions.com" style="color:var(--indigo-light);">empresa@byditsolutions.com</a></div>
-      </div>
-    </div>
-
-  </div>
-
-  <footer>
-    <p class="footer-brand">© 2026 DYBIT Solutions · Auxira · Perú</p>
-    <div class="footer-links">
-      <a href="index.html">Inicio</a>
-      <span>·</span>
-      <a href="privacy-policy.html">Privacidad</a>
-      <span>·</span>
-      <a href="mailto:empresa@byditsolutions.com">empresa@byditsolutions.com</a>
-    </div>
-  </footer>
-
 </body>
 </html>
